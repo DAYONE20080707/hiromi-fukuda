@@ -1,7 +1,3 @@
-import Header_01 from "@/components/header/Header_01"
-import Header_02 from "@/components/header/Header_02"
-import Header_03 from "@/components/header/Header_03"
-import Header_04 from "@/components/header/Header_04"
 import Footer1 from "@/components/footer/Footer_01"
 import Footer2 from "@/components/footer/Footer_02"
 import KeyVisual_01 from "@/components/top/kv/KeyVisual_01"
