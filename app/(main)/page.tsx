@@ -62,25 +62,20 @@ import Cta_03 from "@/components/ui/module/cta/Cta_03"
 import Cta_04 from "@/components/ui/module/cta/Cta_04"
 import Aside_01 from "@/components/ui/module/aside/Aside_01"
 import Aside_02 from "@/components/ui/module/aside/Aside_02"
+import Profile_05 from "@/components/top/profile/Profile_05"
 
 // メインページ
 const HomePage = () => {
   return (
     <div>
-      <KeyVisual_01 />
+      <KeyVisual_04 />
       <About_01 />
-      <Strength_01 />
-      <Message_01 />
-      <Service_01 />
-      <News_01 />
-      <Case_01 />
+      <Service_02 />
+      <Message_02 />
       <Blog_01 />
-      <Plan_01 />
       <Faq_01 />
-      <Profile_01 />
-      <Flow_01 />
-      <Cta_01 />
-      <Aside_01 />
+      <Cta_03 />
+      <Profile_05 />
     </div>
   )
 }
