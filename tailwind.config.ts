@@ -25,6 +25,8 @@ const config = {
         marcellus: ["Marcellus", "serif"],
         zenKaku: ["var(--font-zen-kaku-gothic-new)", "sans-serif"],
         sortsMillGoudy: ["var(--font-en)", "serif"],
+        shipporiMincho: ["var(--font-shippori-mincho)", "serif"],
+        mincho: ["var(--font-shippori-mincho)", "serif"],
         en: ["var(--font-en)", "serif"],
       },
       colors: {

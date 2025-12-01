@@ -1,7 +1,11 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import ToastProvider from "@/components/providers/ToastProvider";
-import { Sorts_Mill_Goudy, Zen_Kaku_Gothic_New } from "next/font/google";
+import {
+  Sorts_Mill_Goudy,
+  Zen_Kaku_Gothic_New,
+  Shippori_Mincho,
+} from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 // Sorts Mill Goudy フォントの設定（英字用）
@@ -19,6 +23,14 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-zen-kaku-gothic-new",
+});
+
+// Shippori Mincho フォントの設定（明朝体）
+const shipporiMincho = Shippori_Mincho({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-shippori-mincho",
 });
 
 export const metadata: Metadata = {
@@ -47,7 +59,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
   return (
     <html lang="ja">
       <body
-        className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable}`}
+        className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable} ${shipporiMincho.variable}`}
       >
         <GoogleTagManager gtmId="GTM-5VZQPT43" />
         <ToastProvider />
