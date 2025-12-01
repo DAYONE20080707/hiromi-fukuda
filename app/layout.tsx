@@ -1,23 +1,25 @@
-import "./globals.css"
-import type { Metadata, Viewport } from "next"
-import ToastProvider from "@/components/providers/ToastProvider"
-import { Noto_Sans_JP, Lato } from "next/font/google"
-import { GoogleTagManager } from "@next/third-parties/google"
+import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import ToastProvider from "@/components/providers/ToastProvider";
+import { Sorts_Mill_Goudy, Zen_Kaku_Gothic_New } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
-// Noto Sans JP フォントの設定
-const notoSansJP = Noto_Sans_JP({
-  weight: ["200", "300", "400", "500", "600", "700", "700", "800", "900"],
-  subsets: ["latin"],
-  display: "swap",
-})
-
-// 英字 フォントの設定
-const lato = Lato({
-  weight: ["300", "400", "700", "900"],
+// Sorts Mill Goudy フォントの設定（英字用）
+const sortsMillGoudy = Sorts_Mill_Goudy({
+  weight: ["400"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-en",
-})
+});
+
+// Zen Kaku Gothic New フォントの設定（デフォルト）
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-zen-kaku-gothic-new",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -28,29 +30,31 @@ export const metadata: Metadata = {
   icons: {
     icon: "/common/favicon.ico",
   },
-}
+};
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-}
+};
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const RootLayout = async ({ children }: RootLayoutProps) => {
   return (
     <html lang="ja">
-      <body className={`font-notoSansJP text-baseColor ${lato.variable}`}>
+      <body
+        className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable}`}
+      >
         <GoogleTagManager gtmId="GTM-5VZQPT43" />
         <ToastProvider />
         {children}
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

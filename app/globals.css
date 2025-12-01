@@ -72,20 +72,17 @@ body,
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-zen-kaku-gothic-new), sans-serif;
   }
 }
 
 /* Custom Font Classes */
-.font-notoSansJP {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
 .font-marcellus {
   font-family: var(--font-marcellus), serif;
 }
 
 .font-en {
-  font-family: var(--font-en), sans-serif;
+  font-family: var(--font-en), serif;
 }
 
 /* swiper */
