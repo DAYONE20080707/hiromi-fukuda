@@ -10,20 +10,13 @@ interface FlowCardProps {
 }
 
 const FlowCard = ({ number, title, description, index }: FlowCardProps) => {
+  const isLast = index === 3;
   return (
     <div
       className={`relative rounded-xl p-6 flex justify-center flex-col items-center bg-white ${
-        index === 3
-          ? `
-              before:content-[''] before:bg-[url('/flow/arrow-right.svg')] before:bg-no-repeat before:inline-block before:w-[20px] before:h-[40px] before:absolute before:left-1/2 before:-translate-x-1/2 before:-bottom-[34px] before:rotate-90 md:before:hidden
-            `
-          : `
-              after:content-[''] after:bg-[url('/flow/arrow-right.svg')] after:bg-no-repeat after:inline-block after:w-[20px] after:h-[40px] after:absolute after:top-1/2 after:-translate-y-1/2 after:-right-[34px] max-md:after:hidden
-              before:content-[''] before:bg-[url('/flow/arrow-right.svg')] before:bg-no-repeat before:inline-block before:w-[20px] before:h-[40px] before:absolute before:left-1/2 before:-translate-x-1/2 before:-bottom-[34px] before:rotate-90 md:before:hidden
-            `
-      }
-      ${
-        index === 8 ? "max-md:before:hidden" : "" // SP時は最後の要素のみ非表示
+        isLast
+          ? "before:content-[''] before:bg-[url('/flow/arrow-right.svg')] before:bg-no-repeat before:inline-block before:w-[20px] before:h-[40px] before:absolute before:left-1/2 before:-translate-x-1/2 before:-bottom-[40px] before:rotate-90 md:before:hidden max-md:before:hidden"
+          : "after:content-[''] after:bg-[url('/flow/arrow-right.svg')] after:bg-no-repeat after:inline-block after:w-[20px] after:h-[40px] after:absolute after:top-1/2 after:-translate-y-1/2 after:-right-[34px] max-md:after:hidden before:content-[''] before:bg-[url('/flow/arrow-right.svg')] before:bg-no-repeat before:inline-block before:w-[20px] before:h-[40px] before:absolute before:left-1/2 before:-translate-x-1/2 before:-bottom-[40px] before:rotate-90 md:before:hidden"
       }`}
     >
       <p className="font-en text-lg font-extrabold text-accentColor tracking-wide">

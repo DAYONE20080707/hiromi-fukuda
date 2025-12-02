@@ -50,7 +50,7 @@ const Header_05 = () => {
       }`}
     >
       <div
-        className={`max-w-[1200px] w-full h-full flex items-center justify-between mx-auto p-3 md:py-0 md:px-2 rounded-full transition-all duration-300 `}
+        className={`max-w-[1200px] w-full h-full flex items-center justify-between mx-auto md:py-0 md:px-2 rounded-full transition-all duration-300 `}
       >
         {/* ロゴ */}
         <Link href="/" className="w-[36px] md:w-[57px] flex-shrink-0">

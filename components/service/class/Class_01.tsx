@@ -35,7 +35,7 @@ const Class_01 = () => {
                       <div className="py-4 border-b border-[#efefef]">
                         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                           <div className="md:flex-1">
-                            <h4 className="text-base md:text-[22px] font-medium text-baseColor">
+                            <h4 className="text-lg md:text-[22px] font-medium text-baseColor">
                               {item.name}
                               {item.attention && (
                                 <span className="text-sm md:text-base">
@@ -44,7 +44,7 @@ const Class_01 = () => {
                               )}
                             </h4>
                             {item.description && (
-                              <span className="block mt-1 text-sm md:text-base">
+                              <span className="block mt-1 text-xs md:text-base">
                                 {convertNewLines(item.description)}
                               </span>
                             )}
