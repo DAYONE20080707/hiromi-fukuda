@@ -2,7 +2,7 @@ import React from "react";
 import MoreButton from "@/components/ui/button/MoreButton";
 import Image from "next/image";
 
-interface AboutSection_02Props {
+interface AboutSectionLessonProps {
   title: string; // 見出しテキスト
   description: string; // 本文
   buttonHref?: string; // ボタンリンク先（任意）
@@ -11,14 +11,14 @@ interface AboutSection_02Props {
   name?: string; // 氏名（任意）
 }
 
-const AboutSection_02 = ({
+const AboutSectionLesson = ({
   title,
   description,
   buttonHref,
   imageUrl,
   position,
   name,
-}: AboutSection_02Props) => {
+}: AboutSectionLessonProps) => {
   // 文字列内の\nを<br />に変換する関数
   const convertNewLines = (text: string) => {
     return text.split("\\n").map((line, i) => (
@@ -65,4 +65,5 @@ const AboutSection_02 = ({
   );
 };
 
-export default AboutSection_02;
+export default AboutSectionLesson;
+

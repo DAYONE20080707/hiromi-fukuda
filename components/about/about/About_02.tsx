@@ -6,7 +6,7 @@ import MoreLinkButton from "@/components/ui/button/MoreButton";
 import ContentHeadline from "@/components/ui/frame/ContentHeadline";
 import SectionContent from "@/components/ui/frame/SectionContent";
 import Image from "next/image";
-import AboutSection from "@/components/ui/module/AboutSection_02";
+import AboutSection from "@/components/ui/module/AboutSectionLesson";
 
 // メッセージ
 const About_02 = () => {
