@@ -8,7 +8,7 @@ export const CompanyInfo = [
           type === "primary"
             ? "/common/logo_header.png" // 1つ目のロゴパス（白色ロゴ）
             : type === "secondary"
-            ? "/common/logo_square.png" // 2つ目のロゴパス（黒色ロゴ）
+            ? "/common/logo_wh.png" // 2つ目のロゴパス（黒色ロゴ）
             : "/common/logo.png" // 3つ目のロゴパス（テキストなし）
         }
         alt="logo"
@@ -17,12 +17,12 @@ export const CompanyInfo = [
         className="w-full h-full object-contain"
       />
     ),
-    companyNameText: "企業名企業名企業名企業名企業名",
-    companyPostalCode: "000-000",
-    companyAddress: "○○県○○市○○町00-00○○○○○ビル00F",
+    companyNameText: "福田ひろみ　ヴァイオリン教室",
+    companyPostalCode: "〒150-0046",
+    companyAddress: "東京都渋谷区松濤1",
     companyTel: "000-000-0000",
     companyTelHref: "tel:0000000000",
-    companyEmail: "info@company.co.jp",
+    companyEmail: "lncjgi9606@yahoo.co.jp",
   },
 ]
 

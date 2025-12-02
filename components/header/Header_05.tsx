@@ -67,9 +67,9 @@ const Header_05 = () => {
       </nav>
 
       {/* 右側：SNSアイコンとボタン */}
-      <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+      <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
         {/* SNSアイコン */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           {SnsButton.map((sns, index) => (
             <SnsIconButton
               key={index}
