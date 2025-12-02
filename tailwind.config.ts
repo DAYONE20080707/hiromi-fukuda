@@ -28,6 +28,7 @@ const config = {
         shipporiMincho: ["var(--font-shippori-mincho)", "serif"],
         mincho: ["var(--font-shippori-mincho)", "serif"],
         en: ["var(--font-en)", "serif"],
+        ebGaramond: ["var(--font-eb-garamond)", "serif"],
       },
       colors: {
         accentColor: "#A78144",

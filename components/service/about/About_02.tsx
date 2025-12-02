@@ -12,31 +12,24 @@ import AboutSection from "@/components/ui/module/AboutSectionLesson";
 const About_02 = () => {
   return (
     <>
-      <SectionContent className="![padding-bottom:0]">
+      <SectionContent className="">
         {/* widthがフルサイズでない場合は指定する */}
         <section className=" md:max-w-[1200px] mx-auto ">
-          <ContentHeadline
-            subTitle="Who we are"
-            mainTitle="私たちについて"
-            // subTitleClassName="text-center"
-            // titleClassName="text-center"
-          />
           <AboutSection
-            title="無数の選択肢の中から\nベストな選択を"
-            description={`経営者は日々悩んでいます。そして、日々決断しています。
-
-一番成果が上がる選択はどれか。一番効率のいい選択はどれか。
-無数の選択肢の中からベストな選択ができるよう、
-常に試行錯誤し決断しています。
-
-私たちはその決断が本当にベストなのか、検討しています。
-そして、その決断が本当のベストになるためのサポートを
-常に用意しています。`}
-            buttonHref="/about"
-            // 以下は任意
-            // imageUrl="/path/to/image.jpg"
-            // position="役職役職"
-            // name="氏名　氏名"
+            subTitle="教室について"
+            mainTitle="About"
+            headline="体験レッスンは手ぶらで！\n楽器貸出しございます。"
+            sections={[
+              {
+                subHeading: "ヴァイオリンを始めてみたい方・楽しく学びたい方",
+                description: `どなた様でもドレミを読めるようになるところからはじめ、基礎から丁寧に教えます。音を通して自分を表現する楽しさを伝えられるよう、ひとりひとりに寄り添ったレッスンを大切にしています。`,
+              },
+              {
+                subHeading: "コンクール・音高音大受験クラス",
+                description: `コンクールや音大へ挑戦したい、より上位へと結果を求めたい方。現役コンクール審査員ならではのコンクールへの勝ち方、曲目選びから技術・表現力アップへ向けて熱心に指導いたします。すでに先生に習っているという方も基礎からの学び直しや環境を変えてみたいなどご相談ください。`,
+              },
+            ]}
+            imageUrl="/service/about.jpg"
           />
         </section>
       </SectionContent>

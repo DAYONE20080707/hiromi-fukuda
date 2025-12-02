@@ -5,6 +5,7 @@ import {
   Sorts_Mill_Goudy,
   Zen_Kaku_Gothic_New,
   Shippori_Mincho,
+  EB_Garamond,
 } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 
@@ -31,6 +32,15 @@ const shipporiMincho = Shippori_Mincho({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-shippori-mincho",
+});
+
+// EB Garamond フォントの設定
+const ebGaramond = EB_Garamond({
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-eb-garamond",
 });
 
 export const metadata: Metadata = {
@@ -114,7 +124,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
   return (
     <html lang="ja">
       <body
-        className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable} ${shipporiMincho.variable}`}
+        className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable} ${shipporiMincho.variable} ${ebGaramond.variable}`}
       >
         <GoogleTagManager gtmId="GTM-5VZQPT43" />
         <ToastProvider />

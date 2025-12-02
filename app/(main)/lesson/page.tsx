@@ -10,15 +10,6 @@ import Award_01 from "@/components/service/award/Award_01";
 import Class_01 from "@/components/service/class/Class_01";
 import Coaching_01 from "@/components/service/coaching/Coaching_01";
 import Feature_01 from "@/components/service/feature/Feature_01";
-import Service1_01 from "@/components/service/service1/Service_01";
-import Service1_02 from "@/components/service/service1/Service_02";
-import Service1_03 from "@/components/service/service1/Service_03";
-import Service2_01 from "@/components/service/service2/Service_01";
-import Service2_02 from "@/components/service/service2/Service_02";
-import Service2_03 from "@/components/service/service2/Service_03";
-import Service3_01 from "@/components/service/service3/Service_01";
-import Service3_02 from "@/components/service/service3/Service_02";
-import Service3_03 from "@/components/service/service3/Service_03";
 import Flow_01 from "@/components/service/flow/Flow_01";
 import Profile_05 from "@/components/top/profile/Profile_05";
 import Cta_01 from "@/components/ui/module/cta/Cta_01";
@@ -29,7 +20,11 @@ import Cta_03 from "@/components/ui/module/cta/Cta_03";
 const ServicePage = () => {
   return (
     <div>
-      <Lowerkv_02 />
+      <Lowerkv_02
+        subtitle="教室について/レッスン・料金"
+        title="About lesson"
+        imageUrl="./common/lowerkv_lesson.jpg"
+      />
       <About_02 />
       <Feature_01 />
       <Coaching_01 />

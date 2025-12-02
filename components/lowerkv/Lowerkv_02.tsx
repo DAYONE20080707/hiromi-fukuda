@@ -1,23 +1,52 @@
 "use client";
 
-import Image from "next/image";
+import Breadcrumb from "@/components/ui/module/Breadcrumb";
+
+interface Lowerkv_02Props {
+  subtitle?: string;
+  title: string;
+  imageUrl?: string;
+  parentDirectoryName?: string;
+  parentDirectoryLink?: string;
+}
 
 // 私たちについて
-const Lowerkv_02 = () => {
+const Lowerkv_02 = ({
+  subtitle,
+  title,
+  imageUrl = "/common/lowerkv.jpg",
+  parentDirectoryName,
+  parentDirectoryLink,
+}: Lowerkv_02Props) => {
   return (
-    <div
-      className="h-[200px] md:h-[400px]"
-      style={{
-        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url(/common/lowerkv.jpg) lightgray 50% / cover no-repeat`,
-      }}
-    >
-      <div className="md:max-w-[1240px] mx-auto space-y-10 px-5 relative h-full flex items-center">
-        <h1 className="text-3xl md:text-5xl font-semibold tracking-[0.05em] leading-[120%] text-white">
-          <span className="block font-lato text-lg font-extrabold mb-1 ![line-height:120%]">
-            title
-          </span>
-          タイトルが入ります
-        </h1>
+    <div className="mt-[50px] md:mt-20">
+      {(parentDirectoryName || title) && (
+        <div className="">
+          <div className="md:max-w-[1240px] mx-auto px-5">
+            <Breadcrumb
+              mainTitle={subtitle}
+              parentDirectoryName={parentDirectoryName}
+              parentDirectoryLink={parentDirectoryLink}
+            />
+          </div>
+        </div>
+      )}
+      <div
+        className="h-[200px] md:h-[400px] relative"
+        style={{
+          background: `url(${imageUrl}) lightgray 50% / cover no-repeat`,
+        }}
+      >
+        <div className="md:max-w-[1240px] mx-auto px-5 relative h-full flex flex-col justify-center">
+          <h1 className="text-3xl md:text-[72px] font-medium tracking-[0.03em] leading-[120%] text-accentColor">
+            {subtitle && (
+              <span className="block text-sm font-medium mb-2 ![line-height:120%] text-baseColor">
+                {subtitle}
+              </span>
+            )}
+            <span className=" font-en">{title}</span>
+          </h1>
+        </div>
       </div>
     </div>
   );
