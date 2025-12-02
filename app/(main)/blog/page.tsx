@@ -13,7 +13,11 @@ import Cta_03 from "@/components/ui/module/cta/Cta_03";
 const BlogPage = () => {
   return (
     <div>
-      <Lowerkv_01 />
+      <Lowerkv_02
+        subtitle="生徒の声・ブログ"
+        title="Review&Blog"
+        imageUrl="./common/lowerkv_blog.jpg"
+      />
       <LowerBlog_01 />
       <Cta_01 />
     </div>

@@ -21,7 +21,11 @@ import Profile_04 from "@/components/top/profile/Profile_04"
 const AboutPage = () => {
   return (
     <div>
-      <Lowerkv_01 />
+      <Lowerkv_02
+        subtitle="福田ひろみについて"
+        title="About Teacher"
+        imageUrl="./common/lowerkv_about.jpg"
+      />
       <About_01 />
       <Purpose_01 />
       <History_01 />
