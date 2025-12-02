@@ -35,10 +35,65 @@ const shipporiMincho = Shippori_Mincho({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | チョイスWeb制作",
-    default: "チョイスのWeb制作は",
+    template: "%s | 福田ひろみ ヴァイオリン教室",
+    default: "福田ひろみ ヴァイオリン教室 | Fukuda Hiromi Violin Lesson",
   },
-  description: "チョイスは、",
+  description:
+    "福田ひろみ ヴァイオリン教室は、初心者から上級者まで、一人ひとりに合わせた丁寧な指導を行っています。ワンコイン体験レッスンも実施中。東京都渋谷区で開講。",
+  keywords: [
+    "渋谷区",
+    "目黒区",
+    "港区",
+    "ヴァイオリンレッスン",
+    "ヴァイオリン教室",
+    "千代田区",
+    "世田谷区",
+    "福田ひろみ",
+    "体験レッスン",
+    "初心者",
+    "Fukuda Hiromi",
+    "Violin Lesson",
+  ],
+  authors: [{ name: "福田ひろみ" }],
+  creator: "福田ひろみ",
+  publisher: "福田ひろみ ヴァイオリン教室",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "福田ひろみ ヴァイオリン教室 | Fukuda Hiromi Violin Lesson",
+    description:
+      "福田ひろみ ヴァイオリン教室は、初心者から上級者まで、一人ひとりに合わせた丁寧な指導を行っています。ワンコイン体験レッスンも実施中。",
+    url: "/",
+    siteName: "福田ひろみ ヴァイオリン教室",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "福田ひろみ ヴァイオリン教室",
+    description:
+      "初心者から上級者まで、一人ひとりに合わせた丁寧な指導を行っています。ワンコイン体験レッスンも実施中。",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/common/favicon.ico",
   },

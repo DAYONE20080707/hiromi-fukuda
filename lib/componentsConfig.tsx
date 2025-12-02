@@ -3,12 +3,7 @@ import Header_05 from "@/components/header/Header_05";
 // import About2 from "@/components/about/About_02";
 import Footer1 from "@/components/footer/Footer_01";
 import Footer2 from "@/components/footer/Footer_02";
-import KeyVisual_01 from "@/components/top/kv/KeyVisual_01";
-import KeyVisual_02 from "@/components/top/kv/KeyVisual_02";
-import KeyVisual_03 from "@/components/top/kv/KeyVisual_03";
 import KeyVisual_04 from "@/components/top/kv/KeyVisual_04";
-import KeyVisual_05 from "@/components/top/kv/KeyVisual_05";
-import KeyVisual_06 from "@/components/top/kv/KeyVisual_06";
 import About_01 from "@/components/top/about/About_01";
 import About_02 from "@/components/top/about/About_02";
 import About_03 from "@/components/top/about/About_03";
@@ -149,20 +144,10 @@ export const componentsConfig: ComponentsConfig = {
       kv: {
         title: "キービジュアル",
         options: [
-          { id: "KeyVisual_01", src: "/admin/1.png", alt: "KeyVisual_01" },
-          { id: "KeyVisual_02", src: "/admin/2.png", alt: "KeyVisual_02" },
-          { id: "KeyVisual_03", src: "/admin/3.png", alt: "KeyVisual_03" },
           { id: "KeyVisual_04", src: "/admin/4.png", alt: "KeyVisual_04" },
-          { id: "KeyVisual_05", src: "/admin/5.png", alt: "KeyVisual_05" },
-          { id: "KeyVisual_06", src: "/admin/6.png", alt: "KeyVisual_06" },
         ],
         components: {
-          KeyVisual_01: <KeyVisual_01 />,
-          KeyVisual_02: <KeyVisual_02 />,
-          KeyVisual_03: <KeyVisual_03 />,
           KeyVisual_04: <KeyVisual_04 />,
-          KeyVisual_05: <KeyVisual_05 />,
-          KeyVisual_06: <KeyVisual_06 />,
         },
       },
       about: {
