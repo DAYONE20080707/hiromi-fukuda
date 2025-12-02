@@ -8,6 +8,7 @@ import LowerBlog_03 from "@/components/blog/blog/Blog_03";
 import Cta_01 from "@/components/ui/module/cta/Cta_01";
 import Cta_02 from "@/components/ui/module/cta/Cta_02";
 import Cta_03 from "@/components/ui/module/cta/Cta_03";
+import Profile_05 from "@/components/top/profile/Profile_05";
 
 // よくある質問
 const BlogPage = () => {
@@ -19,7 +20,8 @@ const BlogPage = () => {
         imageUrl="./common/lowerkv_blog.jpg"
       />
       <LowerBlog_01 />
-      <Cta_01 />
+      <Cta_03 />
+      <Profile_05 />
     </div>
   );
 };

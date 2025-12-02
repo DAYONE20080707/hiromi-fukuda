@@ -8,11 +8,13 @@ const MoreLinkButton = ({
   className = "",
   children = "View more", // デフォルトのテキスト
   variant = "white", // デフォルトは白バージョン
+  useJapaneseFont = false, // 日本語フォントを使用するか（デフォルトはfalse）
 }: {
   href?: string;
   className?: string;
   children?: React.ReactNode;
   variant?: "white" | "accent" | "black";
+  useJapaneseFont?: boolean;
 }) => {
   // バリエーションに基づくスタイルを決定
   const getVariantStyles = () => {
@@ -42,7 +44,8 @@ const MoreLinkButton = ({
     <Link
       href={href}
       className={classNames(
-        "border font-en tracking-[0.03em] font-normal cursor-pointer flex items-center justify-between w-full md:w-[300px] px-6 py-4 relative group",
+        "border tracking-[0.03em] font-normal cursor-pointer flex items-center justify-between w-full md:w-[320px] px-6 py-4 relative group",
+        useJapaneseFont ? "font-zenKaku" : "font-en",
         getVariantStyles(),
         className
       )}
