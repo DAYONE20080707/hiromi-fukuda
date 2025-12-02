@@ -102,7 +102,9 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
         parentDirectoryLink="/blog"
       />
       <article className="mt-10 md:mt-[120px]">
-        <h1 className="text-xl md:text-[32px] leading-[180%] mb-6">{post.title}</h1>
+        <h1 className="text-xl md:text-[32px] leading-[180%] mb-6">
+          {post.title}
+        </h1>
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-10 gap-2">
           <div className="flex flex-wrap gap-2">
             {Array.isArray(post.category) && post.category.length > 0 ? (
