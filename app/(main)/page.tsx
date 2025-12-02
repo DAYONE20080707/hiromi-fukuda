@@ -1,5 +1,4 @@
 import Footer1 from "@/components/footer/Footer_01"
-import Footer2 from "@/components/footer/Footer_02"
 import KeyVisual_04 from "@/components/top/kv/KeyVisual_04"
 import About_01 from "@/components/top/about/About_01"
 import About_02 from "@/components/top/about/About_02"

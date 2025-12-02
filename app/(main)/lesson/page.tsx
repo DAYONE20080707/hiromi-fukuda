@@ -29,7 +29,9 @@ const ServicePage = () => {
       <Feature_01 />
       <Coaching_01 />
       <Award_01 />
-      <Class_01 />
+      <div id="class">
+        <Class_01 />
+      </div>
       <Flow_01 />
       <Cta_03 />
       <Profile_05 />
