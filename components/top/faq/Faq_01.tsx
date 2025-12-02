@@ -12,10 +12,10 @@ const Faq_01 = () => {
     <SectionContent className="bg-bgLight">
       <section className="md:max-w-[1200px] mx-auto">
         <ContentHeadline
-          subTitle="FAQ"
-          mainTitle="よくある質問"
-          subTitleClassName="text-center"
-          titleClassName="text-center"
+          subTitle="よくある質問"
+          mainTitle="FAQ"
+          // subTitleClassName="text-center"
+          // titleClassName="text-center"
         />
         <FaqList hideTab />
        

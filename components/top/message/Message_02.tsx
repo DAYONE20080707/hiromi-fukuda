@@ -14,8 +14,16 @@ const Message_02 = () => {
       <SectionContent className="bg-bgLight">
         {/* widthがフルサイズでない場合は指定する */}
         <section className=" md:max-w-[1200px] mx-auto ">
-          <div className=" mt-16 flex justify-start space-x-20">
-            <div className=" w-[520px] h-[666px] relative">
+          <div className=" mt-16 md:flex justify-start gap-20">
+            <div className="max-w-[480px] md:hidden">
+              <ContentHeadline
+                subTitle="福田ひろみについて"
+                mainTitle="About Teacher"
+                // subTitleClassName="text-center"
+                // titleClassName="text-center"
+              />
+            </div>
+            <div className="w-full h-[400px] md:w-[520px] md:h-[666px] relative">
               <Image
                 src="/top/about/about_img.jpg"
                 alt="福田ひろみ"
@@ -23,8 +31,8 @@ const Message_02 = () => {
                 className="object-cover rounded-[40px]"
               />
             </div>
-            <div className="max-w-[600px]">
-              <div className="max-w-[480px]">
+            <div className="max-w-[600px] mt-10 md:mt-0">
+              <div className="max-w-[480px] hidden md:block">
                 <ContentHeadline
                   subTitle="福田ひろみについて"
                   mainTitle="About Teacher"

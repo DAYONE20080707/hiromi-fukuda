@@ -86,7 +86,7 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
     <SectionContent className="">
       <section className="md:max-w-[1200px] mx-auto md:space-y-10">
         <ContentHeadline subTitle="生徒の声・ブログ" mainTitle="Review&Blog" />
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {contents.map((post) => (
             <div key={post.id} className="w-full">
               <div className="w-full h-[250px] mt-5 md:mt-0 rounded-t-2xl overflow-hidden">
@@ -128,7 +128,7 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
           ))}
         </div>
         <div className="flex justify-center mt-16">
-          <MoreButton href="/" className="mt-10" variant="accent">
+          <MoreButton href="/" className="" variant="accent">
             View more
           </MoreButton>
         </div>

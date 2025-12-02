@@ -39,7 +39,7 @@ const Footer_01 = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-7 flex gap-3">
+            <div className="mt-7 flex flex-col md:flex-row gap-3">
               <ContactButtonFooter />
               <LineButtonFooter />
             </div>

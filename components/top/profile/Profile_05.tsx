@@ -19,7 +19,7 @@ const Profile_05 = () => {
             enTitleClassName=""
             titleClassName=""
           /> */}
-          <div className="md:flex md:justify-center gap-20 w-full">
+          <div className="flex flex-col-reverse md:flex-row md:justify-center gap-6 md:gap-20 w-full">
             <div className="md:w-1/2 rounded-[20px] overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.6554893109096!2d139.6901269764477!3d35.66085872259378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cab61568af5%3A0x277db4a65337244d!2z44CSMTUwLTAwNDYg5p2x5Lqs6YO95riL6LC35Yy65p2-5r-k77yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1764637365889!5m2!1sja!2sjp"

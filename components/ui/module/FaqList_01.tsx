@@ -37,10 +37,10 @@ const FaqList_01 = ({ hideTab = false }: { hideTab?: boolean }) => {
         {faqData[activeCategory].items.map((item, index) => (
           <div key={index} className="mb-6 last:mb-0">
             <div
-              className="flex justify-between py-6 px-10 bg-white cursor-pointer rounded-[10px]"
+              className="flex justify-between py-4 md:py-6 px-4 md:px-10 bg-white cursor-pointer rounded-[10px]"
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
-              <div className="flex font-medium text-lg">
+              <div className="flex items-start font-medium text-lg">
                 <Image
                   src="/common/question-brown.svg"
                   alt="?マーク"
@@ -56,7 +56,7 @@ const FaqList_01 = ({ hideTab = false }: { hideTab?: boolean }) => {
                 height="28"
                 viewBox="0 0 28 28"
                 fill="none"
-                className={`transition-transform duration-300 ${
+                className={`transition-transform duration-300 flex-shrink-0 ${
                   openIndex === index ? "rotate-90" : ""
                 }`}
               >

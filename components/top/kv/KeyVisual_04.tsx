@@ -21,17 +21,30 @@ const KeyVisual_04 = () => {
         <section className="mx-auto relative h-screen flex items-center justify-center p-4 md:p-20">
           {/* 1枚の画像のみ表示 */}
           <div className="relative w-full h-full max-w-[1400px] max-h-[90vh] rounded-[20px] md:rounded-[40px] overflow-hidden">
-            <Image
-              src="/top/kv/kv_img1.jpg"
-              alt="Key Visual"
-              priority
-              fill
-              className="object-cover"
-            />
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcSet="/top/kv/kv_img1_sp.jpg"
+              />
+              <source media="(min-width: 768px)" srcSet="/top/kv/kv_img1.jpg" />
+              <Image
+                src="/top/kv/kv_img1.jpg"
+                alt="Key Visual"
+                priority
+                fill
+                className="object-cover"
+              />
+            </picture>
           </div>
         </section>
         <TopPageHeadline
-          mainTitle={<>福田ひろみ<br/>ヴァイオリン教室</>}
+          mainTitle={
+            <>
+              福田ひろみ
+              <br />
+              ヴァイオリン教室
+            </>
+          }
           description="Fukuda Hiromi Violin Lesson"
           className="w-full text-center absolute left-1/2  transform -translate-x-1/2 top-1/2 -translate-y-1/2 px-5"
         />

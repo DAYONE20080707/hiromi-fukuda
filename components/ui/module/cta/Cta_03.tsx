@@ -8,8 +8,8 @@ const Cta_03 = () => {
   return (
     <>
       <SectionContent className="!py-0 !px-0" variant="light">
-        <section className="mx-auto rounded-t-[40px] overflow-hidden bg-accentColor p-20">
-          <div className="grid grid-cols-2 gap-10">
+        <section className="mx-auto rounded-t-[40px] overflow-hidden bg-accentColor p-5 md:p-20">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10">
             <CtaCard
               subTitle="メールでのお問い合わせ"
               title="Contact"

@@ -14,7 +14,7 @@ const ContactButton = ({
   return (
     <Link
       href="/contact"
-      className={`bg-accentColor text-white cursor-pointer flex items-center justify-center w-[180px] px-4 py-2 rounded-full ${
+      className={`bg-accentColor text-white cursor-pointer flex items-center justify-center w-[250px] md:w-[180px] px-4 py-4 md:py-2 rounded-full ${
         isEnglish
           ? "font-en text-lg tracking-[0.03em]"
           : " text-sm tracking-[0.05em]"

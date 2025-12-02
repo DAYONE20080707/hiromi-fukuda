@@ -38,7 +38,7 @@ const TopPageHeadline_02: React.FC<TopPageHeadline_02Props> = ({
       </p>
       <h1
         className={classNames(
-          "mt-6 font-mincho text-[28px] font-medium md:text-[60px] !leading-[110%] tracking-[0.05em]",
+          "md:mt-6 font-mincho text-[28px] font-medium md:text-[60px] !leading-[110%] tracking-[0.05em]",
           titleClassName
         )}
       >
