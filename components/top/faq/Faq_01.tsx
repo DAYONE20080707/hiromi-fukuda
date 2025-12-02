@@ -9,7 +9,7 @@ import SectionContent from "@/components/ui/frame/SectionContent";
 
 const Faq_01 = () => {
   return (
-    <SectionContent className="bg-white">
+    <SectionContent className="bg-bgLight">
       <section className="md:max-w-[1200px] mx-auto">
         <ContentHeadline
           subTitle="FAQ"
@@ -18,9 +18,7 @@ const Faq_01 = () => {
           titleClassName="text-center"
         />
         <FaqList hideTab />
-        <div className="mt-16 flex justify-center">
-          <MoreButton className="text-accentColor border-accentColor" />
-        </div>
+       
       </section>
     </SectionContent>
   );
