@@ -34,18 +34,16 @@ const Thanks_01 = () => {
 
         {/* メッセージ */}
         <p className="text-base md:text-xl text-baseColor leading-relaxed mb-10 md:mb-16 max-w-3xl mx-auto">
-          お問い合わせいただき、誠にありがとうございます。<br className="hidden md:block"/>
-          お問い合わせ内容を確認後、3営業日以内に担当者からご連絡致しますので、<br />
+          お問い合わせいただき、誠にありがとうございます。
+          <br className="hidden md:block" />
+          お問い合わせ内容を確認後、3営業日以内に担当者からご連絡致しますので、
+          <br />
           今しばらくお待ちくださいませ。
         </p>
 
         {/* トップページへ戻るボタン */}
         <div className="flex justify-center">
-          <MoreLinkButton
-            href="/"
-            variant="accent"
-            useJapaneseFont={true}
-          >
+          <MoreLinkButton href="/" variant="accent" useJapaneseFont={true}>
             トップページへ戻る
           </MoreLinkButton>
         </div>
@@ -55,4 +53,3 @@ const Thanks_01 = () => {
 };
 
 export default Thanks_01;
-

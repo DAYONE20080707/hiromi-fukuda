@@ -11,7 +11,7 @@ import Profile_05 from "@/components/top/profile/Profile_05";
 const ThanksPage = () => {
   return (
     <div>
-       <div className=" md:max-w-[1240px] mx-auto pt-[50px] md:pt-20 px-5">
+      <div className=" md:max-w-[1240px] mx-auto pt-[50px] md:pt-20 px-5">
         <Breadcrumb mainTitle="お問い合わせ" />
         <div className="mt-10 md:mt-[120px]">
           <ContentHeadline subTitle="お問い合わせ" mainTitle="Contact" />
@@ -24,4 +24,3 @@ const ThanksPage = () => {
 };
 
 export default ThanksPage;
-
