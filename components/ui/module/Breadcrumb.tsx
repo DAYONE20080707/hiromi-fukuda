@@ -15,7 +15,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
   parentDirectoryLink,
 }) => {
   return (
-    <div className="text-xs mb-3 flex items-center space-x-1 flex-wrap">
+    <div className="text-xs mb-3 flex items-center space-x-1 flex-wrap py-4">
       <Link href="/">トップページ</Link>
       <ChevronRight className="w-4 h-4" />
       {parentDirectoryName && parentDirectoryLink && (
