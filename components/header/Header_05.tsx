@@ -46,7 +46,7 @@ const Header_05 = () => {
   return (
     <HeaderContent
       className={`fixed top-0 left-1/2 transform -translate-x-1/2 z-10 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white bg-opacity-80" : "bg-transparent"
+        isScrolled ? "bg-white bg-opacity-90" : "bg-transparent"
       }`}
     >
       <div
@@ -138,7 +138,7 @@ const Header_05 = () => {
 
       {/* スマホ用メニュー */}
       <div
-        className={`absolute top-full left-0 w-full bg-white border-t border-gray-200 lg:hidden transition-all duration-300 ${
+        className={`absolute top-full left-0 w-full bg-white bg-opacity-90 lg:hidden transition-all duration-300 ${
           isMenuOpen
             ? "opacity-100 max-h-screen"
             : "opacity-0 max-h-0 overflow-hidden"

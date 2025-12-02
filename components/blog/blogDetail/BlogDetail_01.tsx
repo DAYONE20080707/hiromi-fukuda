@@ -76,7 +76,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
 
   if (loading) {
     return (
-      <div className="max-w-[1200px] mx-auto py-16 px-4">
+      <div className="max-w-[1240px] mx-auto py-[50px] md:py-20 px-4 font-medium">
         <div className="text-center">
           <p>読み込み中...</p>
         </div>
@@ -86,7 +86,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
 
   if (error || !post) {
     return (
-      <div className="max-w-[1200px] mx-auto py-16 px-4">
+      <div className="max-w-[1240px] mx-auto py-[50px] md:py-20 px-4 font-medium">
         <div className="text-center">
           <p>{error || "記事が見つかりませんでした"}</p>
         </div>
