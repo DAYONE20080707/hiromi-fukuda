@@ -28,4 +28,3 @@ const LineButtonFooter = ({
 };
 
 export default LineButtonFooter;
-
