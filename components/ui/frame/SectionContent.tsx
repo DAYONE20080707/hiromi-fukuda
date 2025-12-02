@@ -32,7 +32,7 @@ const SectionContent: React.FC<SectionContentProps> = ({
     }
     if (variant === "light") {
       return {
-        backgroundColor: "#f7fcff",
+        backgroundColor: "#FFF8F8",
         ...style,
       }
     }
