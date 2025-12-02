@@ -3,14 +3,16 @@ import Image from "next/image";
 
 const LineButton = ({
   className = "",
-  href = "/contact",
+  href = "https://lin.ee/rt5XaEnP",
 }: {
   className?: string;
   href?: string;
 }) => {
   return (
     <Link
-      href="/contact"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`bg-accentColor text-white cursor-pointer flex items-center justify-center w-[250px] md:w-[180px] px-2 py-4 md:py-2 rounded-full text-base tracking-[0.05em] gap-1 ${className}`}
     >
       <Image

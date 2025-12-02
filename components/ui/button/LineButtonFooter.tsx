@@ -7,12 +7,14 @@ interface LineButtonFooterProps {
 }
 
 const LineButtonFooter = ({
-  href = "/contact",
+  href = "https://lin.ee/rt5XaEnP",
   className = "",
 }: LineButtonFooterProps) => {
   return (
     <Link
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`w-[250px] bg-white text-baseColor cursor-pointer flex items-center justify-center px-6 py-4 gap-2 font-medium  ${className}`}
     >
       <Image

@@ -36,7 +36,12 @@ const Footer_02 = () => {
                 key={index}
                 className="w-5 h-5 md:w-[60px] md:h-[60px] flex items-center justify-center"
               >
-                <Link href={item.href} className="">
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=""
+                >
                   <Image
                     src={item.src_w || item.src}
                     alt={item.name}
