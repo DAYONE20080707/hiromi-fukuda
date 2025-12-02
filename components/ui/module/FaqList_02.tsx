@@ -44,19 +44,16 @@ const FaqList_02 = ({ hideTab = false }: { hideTab?: boolean }) => {
               {item.question}
             </div>
             <div className="flex flex-col py-10 px-6 font-light bg-bgLight rounded-b-lg">
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <Image
                   src="/common/answer-red.svg"
                   alt="回答マーク"
                   width={24}
                   height={24}
-                  className="mr-2"
+                  className="mr-2 flex-shrink-0"
                 />
-                <h3 className="text-[#d93d69] text-lg font-semibold">
-                  {item.answerTitle}
-                </h3>
+                <p className="whitespace-pre-line">{item.answer}</p>
               </div>
-              <p className="mt-2 pl-8">{item.answer}</p>
             </div>
           </div>
         ))}
