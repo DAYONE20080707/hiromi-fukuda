@@ -1,7 +1,7 @@
 // components/ui/button/MoreLinkButton.tsx
 
-import Link from "next/link"
-import classNames from "classnames"
+import Link from "next/link";
+import classNames from "classnames";
 
 const MoreLinkButton = ({
   href = "/", // デフォルトの href を "/" に設定
@@ -9,40 +9,40 @@ const MoreLinkButton = ({
   children = "View more", // デフォルトのテキスト
   variant = "white", // デフォルトは白バージョン
 }: {
-  href?: string
-  className?: string
-  children?: React.ReactNode
-  variant?: "white" | "accent" | "black"
+  href?: string;
+  className?: string;
+  children?: React.ReactNode;
+  variant?: "white" | "accent" | "black";
 }) => {
   // バリエーションに基づくスタイルを決定
   const getVariantStyles = () => {
     switch (variant) {
       case "accent":
-        return "bg-accentColor text-white border-accentColor"
+        return "bg-accentColor text-white border-accentColor";
       case "black":
-        return "bg-transparent text-baseColor border-baseColor"
+        return "bg-transparent text-baseColor border-baseColor";
       default: // white
-        return "bg-transparent text-white border-white"
+        return "bg-transparent text-white border-white";
     }
-  }
+  };
 
   // 矢印の色を決定
   const getArrowColor = () => {
     switch (variant) {
       case "accent":
-        return "white"
+        return "white";
       case "black":
-        return "black"
+        return "black";
       default: // white
-        return "white"
+        return "white";
     }
-  }
+  };
 
   return (
     <Link
       href={href}
       className={classNames(
-        "border font-en tracking-[0.03em] cursor-pointer flex items-center justify-between w-full md:w-[300px] px-6 py-4 relative group",
+        "border font-en tracking-[0.03em] font-normal cursor-pointer flex items-center justify-between w-full md:w-[300px] px-6 py-4 relative group",
         getVariantStyles(),
         className
       )}
@@ -55,12 +55,12 @@ const MoreLinkButton = ({
         viewBox="0 0 24 24"
         fill="none"
       >
-        <path d="M6.25 12H17.75" stroke={getArrowColor()} />
-        <path d="M13.75 8L17.75 12L13.75 16" stroke={getArrowColor()} />
-        <circle cx="12" cy="12" r="11.5" stroke={getArrowColor()} />
+        <circle cx="12" cy="12" r="12" fill="white" />
+        <path d="M6.25 12H17.75" stroke="#A78144" />
+        <path d="M13.75 8L17.75 12L13.75 16" stroke="#A78144" />
       </svg>
     </Link>
-  )
-}
+  );
+};
 
-export default MoreLinkButton
+export default MoreLinkButton;
