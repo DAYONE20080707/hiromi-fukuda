@@ -1,3 +1,6 @@
+// Admin機能は現在使用していません
+export const componentsConfig: Record<string, any> = {};
+
 // import Header_05 from "@/components/header/Header_05";
 // // import About1 from "@/components/about/About1";
 // // import About2 from "@/components/about/About_02";

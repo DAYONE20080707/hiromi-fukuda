@@ -1,19 +1,11 @@
-import Lowerkv_01 from "@/components/lowerkv/Lowerkv_01";
 import Lowerkv_02 from "@/components/lowerkv/Lowerkv_02";
-import Lowerkv_03 from "@/components/lowerkv/Lowerkv_03";
-import Lowerkv_04 from "@/components/lowerkv/Lowerkv_04";
-import About_01 from "@/components/service/about/About_01";
 import About_02 from "@/components/service/about/About_02";
-import About_03 from "@/components/service/about/About_03";
-import About_04 from "@/components/service/about/About_04";
 import Award_01 from "@/components/service/award/Award_01";
 import Class_01 from "@/components/service/class/Class_01";
 import Coaching_01 from "@/components/service/coaching/Coaching_01";
 import Feature_01 from "@/components/service/feature/Feature_01";
 import Flow_01 from "@/components/service/flow/Flow_01";
 import Profile_05 from "@/components/top/profile/Profile_05";
-import Cta_01 from "@/components/ui/module/cta/Cta_01";
-import Cta_02 from "@/components/ui/module/cta/Cta_02";
 import Cta_03 from "@/components/ui/module/cta/Cta_03";
 
 // 事業内容
