@@ -15,7 +15,7 @@ const Award_01 = () => {
             subTitle="生徒さんコンクール実績"
             mainTitle="Awards"
           />
-          <div className="mt-10 md:mt-16 space-y-8 md:space-y-12 font-medium">
+          <div className="mt-10 md:mt-16 space-y-8 md:space-y-10 font-medium">
             {awardData.map((yearData) => (
               <div key={yearData.year} className="">
                 <h3 className="text-lg md:text-xl text-accentColor mb-6">

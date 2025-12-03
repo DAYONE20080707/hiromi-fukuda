@@ -76,7 +76,7 @@ const AboutSectionLesson = ({
                 <h4 className="text-base md:text-xl font-medium text-accentColor mb-3">
                   {section.subHeading}
                 </h4>
-                <p className="text-sm md:text-base leading-[160%] tracking-[0.02em] whitespace-pre-line">
+                <p className="text-sm md:text-base !leading-[200%] tracking-[0.03em] whitespace-pre-line">
                   {section.description}
                 </p>
               </div>

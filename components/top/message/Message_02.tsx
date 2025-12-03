@@ -57,7 +57,7 @@ const Message_02 = () => {
                 日本音楽コンクール第3位
               </p>
               <div className="mt-10">
-                <MoreLinkButton href="/" className="mt-10" variant="accent">
+                <MoreLinkButton href="/about" className="mt-10" variant="accent">
                   Profile
                 </MoreLinkButton>
               </div>

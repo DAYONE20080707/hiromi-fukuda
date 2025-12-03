@@ -128,7 +128,7 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
           ))}
         </div>
         <div className="flex justify-center mt-16">
-          <MoreButton href="/" className="" variant="accent">
+          <MoreButton href="/blog" className="" variant="accent">
             View more
           </MoreButton>
         </div>

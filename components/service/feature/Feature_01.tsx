@@ -26,8 +26,6 @@ const Feature_01 = () => {
           <ContentHeadline
             subTitle="教室の特徴"
             mainTitle="Feature"
-            subTitleClassName="text-center"
-            titleClassName="text-center"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-16">
             {featureData.map((feature) => (

@@ -55,7 +55,7 @@ const Service_02 = () => {
             </div>
           </div>
           <div className="mt-16 flex justify-center">
-            <MoreButton href="/service" variant="accent" />
+            <MoreButton href="/lesson#class" variant="accent" />
           </div>
         </section>
       </SectionContent>

@@ -32,7 +32,7 @@ const Lowerkv_02 = ({
         </div>
       )}
       <div
-        className="h-[200px] md:h-[400px] relative"
+        className="h-[200px] md:h-[600px] relative"
         style={{
           background: `url(${imageUrl}) lightgray 50% / cover no-repeat`,
         }}
