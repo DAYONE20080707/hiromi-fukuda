@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -23,15 +23,19 @@ const config = {
       },
       fontFamily: {
         marcellus: ["Marcellus", "serif"],
-        zenKaku: ["'Zen Kaku Gothic New'", "sans-serif"],
-        en: ["var(--font-en)", "sans-serif"],
+        zenKaku: ["var(--font-zen-kaku-gothic-new)", "sans-serif"],
+        sortsMillGoudy: ["var(--font-en)", "serif"],
+        shipporiMincho: ["var(--font-shippori-mincho)", "serif"],
+        mincho: ["var(--font-shippori-mincho)", "serif"],
+        en: ["var(--font-en)", "serif"],
+        ebGaramond: ["var(--font-eb-garamond)", "serif"],
       },
       colors: {
-        accentColor: "#4270ED",
-        baseColor: "#393939",
+        accentColor: "#A78144",
+        baseColor: "#51331D",
         borderGray: "#393939",
         bgBlack: "#333333",
-        bgLight: "#f7fcff",
+        bgLight: "#FFF8F8",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -92,6 +96,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

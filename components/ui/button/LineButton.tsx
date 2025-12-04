@@ -1,0 +1,30 @@
+import Link from "next/link";
+import Image from "next/image";
+
+const LineButton = ({
+  className = "",
+  href = "https://lin.ee/rt5XaEnP",
+}: {
+  className?: string;
+  href?: string;
+}) => {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`bg-accentColor text-white cursor-pointer flex items-center justify-center w-[250px] md:w-[180px] px-2 py-4 md:py-2 rounded-full text-base tracking-[0.05em] gap-1 ${className}`}
+    >
+      <Image
+        src="/sns/line_w.svg"
+        alt="LINE"
+        width={20}
+        height={20}
+        className="w-[18px] h-[18px]"
+      />
+      <span className="text-sm tracking-[0.03em]">LINEでお問い合わせ</span>
+    </Link>
+  );
+};
+
+export default LineButton;

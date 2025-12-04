@@ -24,30 +24,26 @@ const Service_02 = () => {
           <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-20">
             <div className="flex-1 flex items-center justify-center">
               <Image
-                src="/top/service/service_img.png"
+                src="/top/service/service_img.jpg"
                 alt="Service Image"
                 width={580}
                 height={853}
-                className="w-full h-full max-w-[580px] max-h-[853px] rounded-[10px]"
+                className="w-full h-full max-w-[580px] max-h-[853px] rounded-[40px]"
               />
             </div>
             <div className="flex-1 max-w-[540px]">
               <ContentHeadline
-                subTitle="Service"
-                mainTitle="事業内容"
+                subTitle="レッスン・料金"
+                mainTitle="Class"
                 subTitleClassName=""
                 titleClassName=""
               />
-              <h3 className=" text-2xl md:text-[40px] tracking-[0.05em] leading-[160%] pb-6 border-b border-borderGray">
-                人と会社と社会をつなぐ。
-                <br />
-                関わる全てに成長を。
-              </h3>
               <div className="mt-6 space-y-6">
                 {servicesToDisplay.map((service) => (
                   <ServiceCard
                     key={service.id}
                     id={service.id}
+                    subTitle={service.subTitle}
                     title={service.title}
                     description={service.description}
                     image={service.image} // 画像パスを渡す
@@ -59,7 +55,7 @@ const Service_02 = () => {
             </div>
           </div>
           <div className="mt-16 flex justify-center">
-            <MoreButton href="/service" variant="accent" />
+            <MoreButton href="/lesson#class" variant="accent" />
           </div>
         </section>
       </SectionContent>

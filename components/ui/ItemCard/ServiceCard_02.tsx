@@ -6,6 +6,7 @@ import MoreButton from "@/components/ui/button/MoreButton"
 
 interface ServiceCardProps {
   id: number
+  subTitle: string
   title: string
   description: string
   image: string // 画像パスを受け取る
@@ -16,6 +17,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   id,
+  subTitle,
   title,
   description,
   image,
@@ -32,7 +34,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className={classNames("mt-5 md:mt-0 space-y-1 md:w-[560px] border-b border-borderGray pb-6" , {
           "md:w-[560px] h-[480px] rounded-2xl absolute inset-0 flex flex-col  bg-black/50 text-white":
             className.includes("overlay"),
-          "relative text-black": !className.includes("overlay"),
+          "relative text-baseColor": !className.includes("overlay"),
         })}
       >
         <div
@@ -41,20 +43,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             "text-accentColor": !className.includes("overlay"),
           })}
         >
-          Service 0{id}
+          {subTitle}
         </div>
         <div
           className={classNames("font-medium text-xl md:text-[22px] tracking-[0.03em] leading-[160%]", {
             "text-white": className.includes("overlay"),
-            "text-black": !className.includes("overlay"),
+            "text-baseColor": !className.includes("overlay"),
           })}
         >
           {title}
         </div>
         <div
-          className={classNames("leading-[160%]",{
+          className={classNames("leading-[160%] text-base font-medium",{
             "text-white": className.includes("overlay"),
-            "text-black": !className.includes("overlay"),
+            "text-baseColor": !className.includes("overlay"),
           })}
         >
           {description}

@@ -1,49 +1,29 @@
 //components/ui/navigation/SnsButton.tsx
 export const SnsButton = [
   {
-    name: 'Instagram',
-    href: '/',
-    src: '/sns/instagram.svg',
-    src_w: '/sns/instagram_w.svg',
+    name: "Instagram",
+    href: "https://www.instagram.com/hiromiviolin/",
+    src: "/sns/instagram.svg",
+    src_w: "/sns/instagram_w.svg",
   },
   {
-    name: 'facebook',
-    href: '/',
-    src: '/sns/facebook.svg',
-    src_w: '/sns/facebook_w.svg',
+    name: "X",
+    href: "https://x.com/hiromi_vn",
+    src: "/sns/x.svg",
+    src_w: "/sns/x_w.svg",
   },
   {
-    name: 'Line',
-    href: '/',
-    src: '/sns/line.svg',
+    name: "Ameba",
+    href: "https://ameblo.jp/hiromifukuda/",
+    src: "/sns/ameba.svg",
+    src_w: "/sns/ameba_w.svg",
   },
-  // {
-  //   name: 'X',
-  //   href: '/',
-  //   src: '/sns/x.svg',
-  // },
-  // {
-  //   name: 'TikTok',
-  //   href: '/',
-  //   src: '/sns/tiktok.svg',
-  // },
-  // {
-  //   name: 'YouTube',
-  //   href: '/',
-  //   src: '/sns/youtube.svg',
-  // },
-  // {
-  //   name: 'note',
-  //   href: '/',
-  //   src: '/sns/note.svg',
-  // },
-  // {
-  //   name: 'LinkedIn',
-  //   href: '/',
-  //   src: '/sns/linkedin.svg',
-  // },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@hiromifukuda_vn?si=M_Q3LFIZ0km3j_ua",
+    src: "/sns/youtube.svg",
+    src_w: "/sns/youtube_w.svg",
+  },
+];
 
-
-]
-
-export default SnsButton
+export default SnsButton;

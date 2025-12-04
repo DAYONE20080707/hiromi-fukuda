@@ -1,4 +1,3 @@
-import Lowerkv_01 from "@/components/lowerkv/Lowerkv_01"
 import PageContent from "@/components/ui/frame/PageContent"
 import Breadcrumb from "@/components/ui/module/Breadcrumb"
 import ComingSoon from "@/components/coming-soon/ComingSoon"

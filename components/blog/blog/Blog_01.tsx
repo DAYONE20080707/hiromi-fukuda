@@ -1,96 +1,129 @@
 // components/blog/Blog_01.tsx
 
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Cms } from "@/types"
-import PageContent from "@/components/ui/frame/PageContent"
-import MoreButton from "@/components/ui/button/MoreButton"
-import { blogsFetch } from "@/lib/api/blogsFetch"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Cms } from "@/types";
+import PageContent from "@/components/ui/frame/PageContent";
+import LoadMoreButton from "@/components/ui/button/LoadMoreButton";
+import { blogsFetch } from "@/lib/api/blogsFetch";
+import SectionContent from "@/components/ui/frame/SectionContent";
 
 interface BlogProps {
-  limit?: number
+  limit?: number;
 }
 
-const Blog_01 = ({ limit = 3 }: BlogProps) => {
-  const [allContents, setAllContents] = useState<Cms[]>([])
-  const [displayContents, setDisplayContents] = useState<Cms[]>([])
+const Blog_01 = ({ limit = 9 }: BlogProps) => {
+  const [allContents, setAllContents] = useState<Cms[]>([]);
+  const [displayContents, setDisplayContents] = useState<Cms[]>([]);
   const [categories, setCategories] = useState<{ id: string; name: string }[]>(
     []
-  )
-  const [loading, setLoading] = useState(true)
-  const [activeCategory, setActiveCategory] = useState("all")
+  );
+  const [loading, setLoading] = useState(true);
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [displayLimit, setDisplayLimit] = useState(limit);
 
   // 全件取得してカテゴリ抽出
   useEffect(() => {
-    let mounted = true
-    ;(async () => {
+    let mounted = true;
+    (async () => {
       try {
-        setLoading(true)
-        const data = await blogsFetch.list(100) // 全件取得
-        if (!mounted) return
-        setAllContents(data)
+        setLoading(true);
+        const data = await blogsFetch.list(100); // 全件取得
+        if (!mounted) return;
+        setAllContents(data);
 
         // カテゴリー抽出（重複除去）
-        const uniqueCats = new Set<string>()
+        const uniqueCats = new Set<string>();
         data.forEach((post) => {
-          post.category?.forEach((c) => uniqueCats.add(c))
-        })
+          post.category?.forEach((c) => uniqueCats.add(c));
+        });
 
         setCategories([
           { id: "all", name: "すべて" },
           ...Array.from(uniqueCats).map((c) => ({ id: c, name: c })),
-        ])
+        ]);
 
         // 初期表示はlimit分だけ
-        setDisplayContents(data.slice(0, limit))
+        setDisplayLimit(limit);
+        setDisplayContents(data.slice(0, limit));
       } catch (error) {
-        console.error("Failed to fetch blogs:", error)
+        console.error("Failed to fetch blogs:", error);
         if (mounted) {
-          setAllContents([])
-          setCategories([{ id: "all", name: "すべて" }])
+          setAllContents([]);
+          setCategories([{ id: "all", name: "すべて" }]);
         }
       } finally {
-        if (mounted) setLoading(false)
+        if (mounted) setLoading(false);
       }
-    })()
+    })();
     return () => {
-      mounted = false
-    }
-  }, [limit])
+      mounted = false;
+    };
+  }, [limit]);
 
   // カテゴリ変更時の絞り込み
   useEffect(() => {
+    setDisplayLimit(limit); // カテゴリ変更時は表示件数をリセット
     if (activeCategory === "all") {
-      setDisplayContents(allContents.slice(0, limit))
+      setDisplayContents(allContents.slice(0, limit));
     } else {
       const filtered = allContents.filter((post) =>
         post.category?.includes(activeCategory)
-      )
-      setDisplayContents(filtered.slice(0, limit))
+      );
+      setDisplayContents(filtered.slice(0, limit));
     }
-  }, [activeCategory, allContents, limit])
+  }, [activeCategory, allContents, limit]);
+
+  // さらに表示ボタンのハンドラー
+  const handleLoadMore = () => {
+    const newLimit = displayLimit + limit; // 現在の表示件数に9件追加
+    setDisplayLimit(newLimit);
+
+    if (activeCategory === "all") {
+      setDisplayContents(allContents.slice(0, newLimit));
+    } else {
+      const filtered = allContents.filter((post) =>
+        post.category?.includes(activeCategory)
+      );
+      setDisplayContents(filtered.slice(0, newLimit));
+    }
+  };
+
+  // 全て表示されているかチェック
+  const isAllDisplayed = () => {
+    if (activeCategory === "all") {
+      return displayContents.length >= allContents.length;
+    } else {
+      const filtered = allContents.filter((post) =>
+        post.category?.includes(activeCategory)
+      );
+      return displayContents.length >= filtered.length;
+    }
+  };
 
   return (
-    <PageContent className="bg-bgLight">
+    <SectionContent className="">
       <section className="md:max-w-[1200px] mx-auto">
         {/* カテゴリボタン */}
-        <div className="flex flex-wrap justify-start md:justify-center gap-x-5 md:gap-20 rounded-full bg-white mx-auto px-5 md:px-20 w-fit">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-1 py-4 transition-all font-bold whitespace-nowrap ${
-                activeCategory === category.id
-                  ? "text-accentColor border-b-4 border-accentColor"
-                  : "hover:text-accentColor"
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-3 rounded-full overflow-hidden w-full gap-[1px]">
+            {categories.slice(0, 3).map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-6 md:px-12 py-4 transition-all font-medium whitespace-nowrap text-lg ${
+                  activeCategory === category.id
+                    ? "bg-accentColor text-white"
+                    : "bg-[#F6F2EC] text-baseColor hover:bg-gray-50"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {loading ? (
@@ -110,7 +143,7 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
                   href={`/blog/${post.id}`}
                   className="w-full hover:opacity-90 transition-opacity"
                 >
-                  <div className="w-full">
+                  <div className="w-full font-medium">
                     <div className="w-full h-[250px] mt-5 md:mt-0 rounded-t-2xl">
                       {post.image && (
                         <Image
@@ -118,11 +151,11 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
                           alt={post.title ?? "ブログサムネイル"}
                           width={370}
                           height={223}
-                          className="w-full h-full rounded-t-2xl object-cover"
+                          className="w-full h-full rounded-[20px] object-cover"
                         />
                       )}
                     </div>
-                    <div className="bg-white p-6">
+                    <div className="mt-6">
                       <p className="text-lg font-bold break-words min-h-14">
                         {post.title}
                       </p>
@@ -133,7 +166,7 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
                       </p>
                       <div className="mt-2 flex flex-wrap gap-2">
                         {post.category?.map((cat, index) => (
-                          <span key={index} className="text-[#5f5f5f] text-xs">
+                          <span key={index} className=" text-xs">
                             #{cat}
                           </span>
                         ))}
@@ -143,14 +176,22 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
                 </Link>
               ))}
             </div>
-            <div className="flex justify-center mt-16">
-              <MoreButton className="text-accentColor border-accentColor" />
-            </div>
+            {!isAllDisplayed() && (
+              <div className="flex justify-center mt-16">
+                <LoadMoreButton
+                  onClick={handleLoadMore}
+                  className="mt-10"
+                  variant="accent"
+                >
+                  View more
+                </LoadMoreButton>
+              </div>
+            )}
           </>
         )}
       </section>
-    </PageContent>
-  )
-}
+    </SectionContent>
+  );
+};
 
-export default Blog_01
+export default Blog_01;

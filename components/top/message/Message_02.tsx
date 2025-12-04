@@ -11,34 +11,56 @@ import Image from "next/image";
 const Message_02 = () => {
   return (
     <>
-      <SectionContent>
+      <SectionContent className="bg-bgLight">
         {/* widthがフルサイズでない場合は指定する */}
         <section className=" md:max-w-[1200px] mx-auto ">
-          <ContentHeadline
-            subTitle="Who we are"
-            mainTitle="私たちについて"
-            subTitleClassName="text-center"
-            titleClassName="text-center"
-          />
-          <div className=" mt-16 flex justify-start space-x-20">
-            <div className=" w-[520px] h-[767px] relative">
-              <Image
-                src="/top/message/message_img.png"
-                alt="message"
-                fill
-                className="object-cover"
+          <div className=" mt-16 md:flex justify-start gap-20">
+            <div className="max-w-[480px] md:hidden">
+              <ContentHeadline
+                subTitle="福田ひろみについて"
+                mainTitle="About Teacher"
+                // subTitleClassName="text-center"
+                // titleClassName="text-center"
               />
             </div>
-            <div className="w-[600px]">
-              <h3 className="text-5xl ">見出しテキスト</h3>
-              <p>
-                メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。
-                メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。
-                メッセージはいります。メッセージはいります。
-                メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。メッセージはいります。
-                メッセージはいります。メッセージはいります。
+            <div className="w-full h-[400px] md:w-[520px] md:h-[666px] relative">
+              <Image
+                src="/top/about/about_img.jpg"
+                alt="福田ひろみ"
+                fill
+                className="object-cover rounded-[40px]"
+              />
+            </div>
+            <div className="max-w-[600px] mt-10 md:mt-0">
+              <div className="max-w-[480px] hidden md:block">
+                <ContentHeadline
+                  subTitle="福田ひろみについて"
+                  mainTitle="About Teacher"
+                  // subTitleClassName="text-center"
+                  // titleClassName="text-center"
+                />
+              </div>
+              <p className=" leading-[250%] tracking-[0.03em]">
+                はじめまして。ヴァイオリニストの福田ひろみです。
+                <br />
+                初めてヴァイオリンを手にする方から､音大受験をめざす方まで､
+                <br />
+                おひとりおひとりの進度に合わせたカリキュラムを組んでいます。
+                <br />
+                1回ごとのレッスンを大切に､着実な上達をサポートします。
+                <br />
+                <br />
+                東京音楽大学､大学院ともに首席で卒業
+                <br />
+                高嶋ちさ子12人のヴァイオリニスト元メンバー
+                <br />
+                日本音楽コンクール第3位
               </p>
-              <MoreLinkButton href="/" />
+              <div className="mt-10">
+                <MoreLinkButton href="/about" className="mt-10" variant="accent">
+                  Profile
+                </MoreLinkButton>
+              </div>
             </div>
           </div>
         </section>
