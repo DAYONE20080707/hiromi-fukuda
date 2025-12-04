@@ -21,7 +21,7 @@
     "lucide-react": "^0.435.0",
     "microcms-js-sdk": "^3.1.2",
     "next": "^15.5.2",
-    "nodemailer": "^7.0.6",
+    "nodemailer": "^7.0.11",
     "react": "^18",
     "react-dom": "^18",
     "react-feather": "^2.0.10",

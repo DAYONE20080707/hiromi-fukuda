@@ -1,78 +1,78 @@
 // components/blog/blogDetail/BlogDetail_01.tsx
 
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { NavigationArrow } from "@/components/ui/icons/NavigationArrow";
-import { Cms } from "@/types";
-import { blogsFetch } from "@/lib/api/blogsFetch";
-import Breadcrumb from "@/components/ui/module/Breadcrumb";
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { NavigationArrow } from "@/components/ui/icons/NavigationArrow"
+import { Cms } from "@/types"
+import { blogsFetch } from "@/lib/api/blogsFetch"
+import Breadcrumb from "@/components/ui/module/Breadcrumb"
 
 interface BlogDetailProps {
   params: {
-    id: string;
-  };
+    id: string
+  }
 }
 
 const BlogDetail_01 = ({ params }: BlogDetailProps) => {
-  const { id } = params;
-  const [post, setPost] = useState<Cms | null>(null);
-  const [prevPost, setPrevPost] = useState<Cms | null>(null);
-  const [nextPost, setNextPost] = useState<Cms | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { id } = params
+  const [post, setPost] = useState<Cms | null>(null)
+  const [prevPost, setPrevPost] = useState<Cms | null>(null)
+  const [nextPost, setNextPost] = useState<Cms | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    let mounted = true;
+    let mounted = true
 
     const fetchData = async () => {
       try {
-        setLoading(true);
-        setError(null);
+        setLoading(true)
+        setError(null)
 
         // 記事取得
-        const currentPost = await blogsFetch.get(id);
-        if (!mounted) return;
+        const currentPost = await blogsFetch.get(id)
+        if (!mounted) return
 
         if (!currentPost) {
-          setError("記事が見つかりませんでした");
-          return;
+          setError("記事が見つかりませんでした")
+          return
         }
 
-        setPost(currentPost);
+        setPost(currentPost)
 
         // 全記事取得（publishedAt順）
-        const allPosts = await blogsFetch.list(100);
-        if (!mounted) return;
+        const allPosts = await blogsFetch.list(100)
+        if (!mounted) return
 
         const sorted = allPosts.sort(
           (a, b) =>
             new Date(b.date ?? "").getTime() - new Date(a.date ?? "").getTime()
-        );
+        )
 
-        const index = sorted.findIndex((p) => p.id === id);
-        setPrevPost(index > 0 ? sorted[index - 1] : null);
-        setNextPost(index < sorted.length - 1 ? sorted[index + 1] : null);
+        const index = sorted.findIndex((p) => p.id === id)
+        setPrevPost(index > 0 ? sorted[index - 1] : null)
+        setNextPost(index < sorted.length - 1 ? sorted[index + 1] : null)
       } catch (err) {
-        console.error("Failed to fetch blog post:", err);
+        console.error("Failed to fetch blog post:", err)
         if (mounted) {
-          setError("記事の取得に失敗しました");
+          setError("記事の取得に失敗しました")
         }
       } finally {
         if (mounted) {
-          setLoading(false);
+          setLoading(false)
         }
       }
-    };
+    }
 
-    fetchData();
+    fetchData()
 
     return () => {
-      mounted = false;
-    };
-  }, [id]);
+      mounted = false
+    }
+  }, [id])
 
   if (loading) {
     return (
@@ -81,7 +81,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
           <p>読み込み中...</p>
         </div>
       </div>
-    );
+    )
   }
 
   if (error || !post) {
@@ -91,7 +91,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
           <p>{error || "記事が見つかりませんでした"}</p>
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -144,24 +144,30 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
         )}
 
         {/* 生徒情報カード */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 md:mb-20">
-          <div className="flex rounded-[20px] overflow-hidden">
-            <div className="bg-accentColor text-white px-6 py-4 flex items-center justify-center min-w-[160px] md:min-w-[198px]">
-              <span className="text-base font-medium">お名前</span>
-            </div>
-            <div className="bg-[#F6F2EC] text-baseColor px-6 py-4 flex items-center flex-1 justify-center">
-              <span className="text-base">Aさん (3歳のお子さん保護者様)</span>
-            </div>
+        {(post.studentName || post.course) && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 md:mb-20">
+            {post.studentName && (
+              <div className="flex rounded-[20px] overflow-hidden">
+                <div className="bg-accentColor text-white px-6 py-4 flex items-center justify-center min-w-[160px] md:min-w-[198px]">
+                  <span className="text-base font-medium">お名前</span>
+                </div>
+                <div className="bg-[#F6F2EC] text-baseColor px-6 py-4 flex items-center flex-1 justify-center">
+                  <span className="text-base">{post.studentName}</span>
+                </div>
+              </div>
+            )}
+            {post.course && (
+              <div className="flex rounded-[20px] overflow-hidden">
+                <div className="bg-accentColor text-white px-6 py-4 flex items-center justify-center min-w-[160px] md:min-w-[198px]">
+                  <span className="text-base font-medium">レッスンコース</span>
+                </div>
+                <div className="bg-[#F6F2EC] text-baseColor px-6 py-4 flex items-center flex-1 justify-center">
+                  <span className="text-base">{post.course}</span>
+                </div>
+              </div>
+            )}
           </div>
-          <div className="flex rounded-[20px] overflow-hidden">
-            <div className="bg-accentColor text-white px-6 py-4 flex items-center justify-center min-w-[160px] md:min-w-[198px]">
-              <span className="text-base font-medium">レッスンコース</span>
-            </div>
-            <div className="bg-[#F6F2EC] text-baseColor px-6 py-4 flex items-center flex-1 justify-center">
-              <span className="text-base">45分コース</span>
-            </div>
-          </div>
-        </div>
+        )}
 
         <div
           className="blog-content"
@@ -214,7 +220,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default BlogDetail_01;
+export default BlogDetail_01

@@ -10,6 +10,8 @@ export type Cms = {
   }
 
   category?: string[]
+  studentName?: string
+  course?: string
 }
 
 // 事例の型定義
