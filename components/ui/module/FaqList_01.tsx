@@ -85,8 +85,74 @@ const FaqList_01 = ({ hideTab = false }: { hideTab?: boolean }) => {
                     height={24}
                     className="mr-2"
                   />
-                  <div className="flex flex-wrap items-start gap-2">
-                    <span className="whitespace-pre-line">{item.answer}</span>
+                  <div className="flex flex-wrap items-start gap-2 flex-1">
+                    {item.answer.includes("VIOLIN_SIZE_TABLE") ? (
+                      <div className="w-full space-y-4">
+                        {item.answer.split("VIOLIN_SIZE_TABLE")[0] && (
+                          <p className="whitespace-pre-line">
+                            {item.answer.split("VIOLIN_SIZE_TABLE")[0].trim()}
+                          </p>
+                        )}
+                        <div className="overflow-x-auto w-full">
+                          <table className="w-full border-collapse text-base">
+                            <thead>
+                              <tr className="bg-[#F6F2EC]">
+                                <th className="border border-baseColor px-4 py-3 text-left font-medium">
+                                  身長
+                                </th>
+                                <th className="border border-baseColor px-4 py-3 text-left font-medium">
+                                  サイズ
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td className="border border-baseColor px-4 py-3">
+                                  110㎝ ～ 115㎝
+                                </td>
+                                <td className="border border-baseColor px-4 py-3">
+                                  1/8
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="border border-baseColor px-4 py-3">
+                                  115㎝ ～ 125㎝
+                                </td>
+                                <td className="border border-baseColor px-4 py-3">
+                                  1/4
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="border border-baseColor px-4 py-3">
+                                  125㎝ ～ 130㎝
+                                </td>
+                                <td className="border border-baseColor px-4 py-3">
+                                  1/2
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="border border-baseColor px-4 py-3">
+                                  130㎝ ～ 145㎝
+                                </td>
+                                <td className="border border-baseColor px-4 py-3">
+                                  3/4
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="border border-baseColor px-4 py-3">
+                                  145㎝ ～ 大人
+                                </td>
+                                <td className="border border-baseColor px-4 py-3">
+                                  4/4
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="whitespace-pre-line">{item.answer}</span>
+                    )}
                     {"linkText" in item &&
                       "linkUrl" in item &&
                       item.linkText &&
