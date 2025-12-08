@@ -7,7 +7,7 @@ import {
   Shippori_Mincho,
   EB_Garamond,
 } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+
 
 // Sorts Mill Goudy フォントの設定（英字用）
 const sortsMillGoudy = Sorts_Mill_Goudy({
@@ -126,7 +126,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
       <body
         className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable} ${shipporiMincho.variable} ${ebGaramond.variable}`}
       >
-        <GoogleTagManager gtmId="GTM-5VZQPT43" />
+
         <ToastProvider />
         {children}
       </body>
