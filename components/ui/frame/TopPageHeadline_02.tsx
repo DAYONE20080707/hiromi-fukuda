@@ -27,7 +27,12 @@ const TopPageHeadline_02: React.FC<TopPageHeadline_02Props> = ({
   descriptionClassName = "",
 }) => {
   return (
-    <section className={classNames("md:max-w-[600px] w-full text-accentColor", className)}>
+    <section
+      className={classNames(
+        "md:max-w-[600px] w-full text-accentColor",
+        className
+      )}
+    >
       <p
         className={classNames(
           "font-en text-base md:text-2xl !leading-[160%] tracking-[0.05em] font-normal",

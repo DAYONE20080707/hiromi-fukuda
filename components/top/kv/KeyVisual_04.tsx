@@ -20,7 +20,7 @@ const KeyVisual_04 = () => {
         {/* widthがフルサイズでない場合は指定する */}
         <section className="mx-auto relative h-screen flex items-center justify-center p-4 md:p-20">
           {/* 1枚の画像のみ表示 */}
-          <div className="relative w-full h-full max-w-[1400px] max-h-[90vh] rounded-[20px] md:rounded-[40px] overflow-hidden">
+          <div className="relative w-full h-full max-w-[1680px] max-h-[90vh] rounded-[20px] md:rounded-[40px] overflow-hidden">
             <picture>
               <source
                 media="(max-width: 767px)"
