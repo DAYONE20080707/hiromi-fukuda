@@ -38,7 +38,14 @@ const Profile_05 = () => {
                 </h3>
                 <ProfileCard
                   label=""
-                  value="〒150-0046　東京都渋谷区松濤1 (Bunkamuraから徒歩1分)"
+                  value={
+                    <>
+                      〒150-0046　東京都渋谷区松濤1{" "}
+                      <span className="md:inline block">
+                        (Bunkamuraから徒歩1分)
+                      </span>
+                    </>
+                  }
                 />
                 <ProfileCard
                   label="メールアドレス"

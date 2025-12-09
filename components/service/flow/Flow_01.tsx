@@ -19,7 +19,7 @@ const Flow_01 = ({ className = "" }) => {
             // subTitleClassName="text-center"
             // titleClassName="text-center"
           />
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10">
+          <div className="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10">
             <FlowCard
               number="01"
               title={`まずは楽しく

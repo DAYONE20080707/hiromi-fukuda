@@ -14,7 +14,7 @@ const Message_02 = () => {
       <SectionContent className="bg-bgLight">
         {/* widthがフルサイズでない場合は指定する */}
         <section className=" md:max-w-[1200px] mx-auto ">
-          <div className=" mt-16 md:flex justify-start gap-20">
+          <div className="md:flex justify-start gap-20">
             <div className="max-w-[480px] md:hidden">
               <ContentHeadline
                 subTitle="福田ひろみについて"
@@ -23,12 +23,13 @@ const Message_02 = () => {
                 // titleClassName="text-center"
               />
             </div>
-            <div className="w-full h-[400px] md:w-[520px] md:h-[666px] relative">
+            <div className="w-full h-full md:w-[520px] md:h-[666px] relative">
               <Image
                 src="/top/about/about_img.jpg"
                 alt="福田ひろみ"
-                fill
-                className="object-cover rounded-[40px]"
+                width={520}
+                height={666}
+                className="object-cover rounded-[20px] md:rounded-[40px] aspect-[520/666]"
               />
             </div>
             <div className="max-w-[600px] mt-10 md:mt-0">
@@ -44,9 +45,9 @@ const Message_02 = () => {
                 はじめまして。ヴァイオリニストの福田ひろみです。
                 <br />
                 初めてヴァイオリンを手にする方から､音大受験をめざす方まで､
-                <br />
+                <br className="hidden md:block"/>
                 おひとりおひとりの進度に合わせたカリキュラムを組んでいます。
-                <br />
+                <br className="hidden md:block"/>
                 1回ごとのレッスンを大切に､着実な上達をサポートします。
                 <br />
                 <br />

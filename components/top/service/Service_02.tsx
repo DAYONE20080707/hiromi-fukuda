@@ -28,7 +28,7 @@ const Service_02 = () => {
                 alt="Service Image"
                 width={580}
                 height={853}
-                className="w-full h-full max-w-[580px] max-h-[853px] rounded-[40px]"
+                className="w-full h-full max-w-[250px] md:max-w-[580px] max-h-[853px] rounded-[20px] md:rounded-[40px]"
               />
             </div>
             <div className="flex-1 max-w-[540px]">
@@ -38,7 +38,7 @@ const Service_02 = () => {
                 subTitleClassName=""
                 titleClassName=""
               />
-              <div className="mt-6 space-y-6">
+              <div className="md:mt-6">
                 {servicesToDisplay.map((service) => (
                   <ServiceCard
                     key={service.id}

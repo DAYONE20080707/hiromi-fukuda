@@ -26,12 +26,13 @@ const About_01 = () => {
                 // titleClassName="text-center"
               />
             </div>
-            <div className="w-full h-[400px] md:w-[520px] md:h-[666px] relative">
+            <div className="w-full h-full md:w-[520px] md:h-[666px] relative">
               <Image
                 src="/top/about/about_img.jpg"
                 alt="福田ひろみ"
-                fill
-                className="object-cover rounded-[40px]"
+                width={520}
+                height={666}
+                className="object-cover rounded-[20px] md:rounded-[40px] aspect-[520/666]"
               />
             </div>
             <div className="max-w-[540px] mt-10 md:mt-0">

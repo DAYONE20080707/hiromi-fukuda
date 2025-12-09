@@ -96,7 +96,7 @@ const Header_05 = () => {
 
         {/* ハンバーガーメニューボタン */}
         <button
-          className={`block lg:hidden text-baseColor transition-transform duration-300 ${
+          className={`block lg:hidden text-accentColor transition-transform duration-300 ${
             isMenuOpen ? "rotate-90" : "rotate-0"
           }`}
           onClick={handleMenuToggle}
@@ -109,7 +109,7 @@ const Header_05 = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-8 h-8"
+              className="w-10 h-10"
             >
               <path
                 strokeLinecap="round"
@@ -124,7 +124,7 @@ const Header_05 = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-8 h-8"
+              className="w-10 h-10"
             >
               <path
                 strokeLinecap="round"

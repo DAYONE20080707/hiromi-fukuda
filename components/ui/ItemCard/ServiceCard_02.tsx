@@ -31,7 +31,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     >
 
       <div
-        className={classNames("mt-5 md:mt-0 space-y-1 md:w-[560px] border-b border-borderGray pb-6" , {
+        className={classNames("mt-5 space-y-1 md:w-[560px] border-b border-borderGray pb-6" , {
           "md:w-[560px] h-[480px] rounded-2xl absolute inset-0 flex flex-col  bg-black/50 text-white":
             className.includes("overlay"),
           "relative text-baseColor": !className.includes("overlay"),
