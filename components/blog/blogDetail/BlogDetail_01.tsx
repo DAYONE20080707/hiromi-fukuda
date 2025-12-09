@@ -138,7 +138,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
               src={post.image.url}
               alt={post.title}
               fill
-              className="object-cover rounded-[40px]"
+              className="object-cover rounded-[20px] md:rounded-[40px]"
             />
           </div>
         )}

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import MoreButton from "@/components/ui/button/MoreButton";
 import Image from "next/image";
 import ContentHeadline from "../frame/ContentHeadline";
@@ -34,17 +35,16 @@ const AboutSection_01 = ({
     <>
       <div className="md:flex items-start justify-between md:max-w-[1240px] mx-auto gap-10 px-5">
         <div className="max-w-[480px]">
-        <ContentHeadline
-          subTitle="福田ひろみヴァイオリン教室について"
-          mainTitle="What's Violine lesson"
-          subTitleClassName=""
-          titleClassName=""
-        />
+          <ContentHeadline
+            subTitle="福田ひろみヴァイオリン教室について"
+            mainTitle="What's Violine lesson"
+            subTitleClassName=""
+            titleClassName=""
+          />
         </div>
-       
 
         <div>
-          <h3 className="w-full md:max-w-[500px] text-2xl md:text-[22px] leading-[160%] tracking-[0.03em]">
+          <h3 className="w-full md:max-w-[500px] text-xl md:text-[22px] leading-[160%] tracking-[0.03em]">
             {convertNewLines(title)}
           </h3>
           <p className="w-full md:max-w-[660px] leading-relaxed md:leading-[45px] text-base md:text-lg mt-10 md:mt-10 whitespace-pre-line tracking-[0.03em]">
@@ -57,6 +57,14 @@ const AboutSection_01 = ({
               {name}
             </p>
           )}
+          <div className="mt-4">
+            <Link
+              href="/contact"
+              className="text-base text-accentColor underline hover:opacity-70 transition-opacity"
+            >
+              お問い合わせはこちら
+            </Link>
+          </div>
           {buttonHref && (
             <MoreButton href={buttonHref} className="mt-10" variant="accent">
               About us
@@ -64,12 +72,12 @@ const AboutSection_01 = ({
           )}
         </div>
       </div>
-      <section className="md:w-full h-[250px] md:h-[480px] mx-auto mt-10 md:mt-[120px]  flex justify-center relative ">
+      <section className="md:w-full h-[150px] md:h-[480px] mx-auto mt-10 md:mt-[120px]  flex justify-center relative ">
         <Image
           src="/top/message/message_img.jpg"
           alt="message"
           fill
-          className="object-cover rounded-t-[40px]"
+          className="object-cover rounded-t-[20px] md:rounded-t-[40px]"
         />
       </section>
     </>

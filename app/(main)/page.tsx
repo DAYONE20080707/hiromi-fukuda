@@ -16,8 +16,8 @@ const HomePage = () => {
       <About_01 />
       <Service_02 />
       <Message_02 />
-      <Blog_01 />
       <Faq_01 />
+      <Blog_01 />
       <Cta_03 />
       <Profile_05 />
     </div>

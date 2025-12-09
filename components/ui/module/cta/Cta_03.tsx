@@ -22,7 +22,7 @@ const Cta_03 = ({ variant = "pink" }: Cta_03Props) => {
               description={
                 <>
                   ワンコイン体験レッスンのお申込み･ご質問は
-                  <br />
+                  <br className="hidden md:block"/>
                   こちらからお気軽にご連絡ください。
                 </>
               }
@@ -36,7 +36,7 @@ const Cta_03 = ({ variant = "pink" }: Cta_03Props) => {
               description={
                 <>
                   ワンコイン体験レッスンのお申込み･ご質問は
-                  <br />
+                  <br className="hidden md:block"/>
                   こちらからお気軽にご連絡ください。
                 </>
               }

@@ -76,7 +76,7 @@ const FaqList_01 = ({ hideTab = false }: { hideTab?: boolean }) => {
               </svg>
             </div>
             {openIndex === index && (
-              <div className="py-6 px-10 bg-white">
+              <div className="py-4 md:py-6 px-4 md:px-10 bg-white">
                 <div className="flex font-medium items-start">
                   <Image
                     src="/common/answer-red.svg"

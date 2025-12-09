@@ -15,7 +15,7 @@ const Coaching_01 = () => {
       <SectionContent className="">
         {/* widthがフルサイズでない場合は指定する */}
         <section className=" md:max-w-[1200px] mx-auto ">
-          <div className=" mt-16 md:flex justify-start gap-20">
+          <div className=" md:mt-16 md:flex justify-start gap-20">
             <div className="max-w-[480px] md:hidden">
               <ContentHeadline
                 subTitle="福田ひろみについて"
@@ -29,7 +29,7 @@ const Coaching_01 = () => {
                 src="/service/coaching.jpg"
                 alt="福田ひろみ"
                 fill
-                className="object-cover rounded-[40px]"
+                className="object-cover rounded-[20px] md:rounded-[40px]"
               />
             </div>
             <div className="max-w-[600px] mt-10 md:mt-0">

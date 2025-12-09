@@ -45,12 +45,13 @@ const AboutSectionLesson = ({
 
   return (
     <div className="flex flex-col-reverse md:flex-row justify-start md:gap-20">
-      <div className="md:w-[36vw] md:max-w-[520px] h-[300px] md:h-auto relative mt-10 md:mt-0">
+      <div className="md:w-[36vw] max-w-[250px] md:max-w-[520px] h-full md:h-auto relative mt-10 md:mt-0 mx-auto">
         <Image
           src={imageUrl || "/top/message/message_img.png"}
           alt={name || "message"}
-          fill
-          className="object-cover w-full h-full rounded-[40px]"
+          width={540}
+          height={700}
+          className="object-cover w-full h-full rounded-[20px] md:rounded-[40px]"
         />
       </div>
       <div className="md:max-w-[540px]">
