@@ -19,12 +19,24 @@ const AboutSectionMessage = ({
   imageUrl,
   name,
 }: AboutSectionMessageProps) => {
-  // 文字列内の\nを<br />に変換する関数
+  // 文字列内の\nを<br />に変換する関数（title用）
   const convertNewLines = (text: string) => {
-    return text.split("\\n").map((line, i) => (
+    return text.split("\n").map((line, i) => (
       <React.Fragment key={i}>
         {line}
-        {i !== text.split("\\n").length - 1 && <br />}
+        {i !== text.split("\n").length - 1 && <br />}
+      </React.Fragment>
+    ));
+  };
+
+  // 文字列内の\nを<br className="hidden md:block">に変換する関数（description用：SP時は非表示）
+  const convertDescription = (text: string) => {
+    return text.split("\n").map((line, i) => (
+      <React.Fragment key={i}>
+        {line.trim()}
+        {i !== text.split("\n").length - 1 && (
+          <br className="hidden md:block" />
+        )}
       </React.Fragment>
     ));
   };
@@ -45,8 +57,8 @@ const AboutSectionMessage = ({
           <h3 className="w-full md:max-w-[581px] text-2xl md:text-[40px] leading-[160%] tracking-[0.03em]">
             {convertNewLines(title)}
           </h3>
-          <p className="w-full md:max-w-[581px] !leading-[200%] text-base md:text-base mt-10 md:mt-10 whitespace-pre-line tracking-[0.03em]">
-            {description}
+          <p className="w-full md:max-w-[581px] !leading-[200%] text-base md:text-base mt-10 md:mt-10 tracking-[0.03em]">
+            {convertDescription(description)}
           </p>
           {name && (
             <p className="mt-10 text-base md:text-base !leading-[200%] tracking-[0.03em]">

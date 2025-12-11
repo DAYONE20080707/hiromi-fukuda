@@ -1,6 +1,7 @@
 // components/ui/itemCard/FlowCard_01.tsx
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 interface FlowCardProps {
   number: string;
@@ -11,6 +12,19 @@ interface FlowCardProps {
 
 const FlowCard = ({ number, title, description, index }: FlowCardProps) => {
   const isLast = index === 3;
+
+  // 文字列内の\nを<br className="hidden md:block">に変換する関数（description用：SP時は非表示）
+  const convertDescription = (text: string) => {
+    return text.split("\n").map((line, i) => (
+      <React.Fragment key={i}>
+        {line}
+        {i !== text.split("\n").length - 1 && (
+          <br className="hidden md:block" />
+        )}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div
       className={`relative rounded-xl p-6 flex justify-center flex-col items-center bg-white ${
@@ -28,7 +42,7 @@ const FlowCard = ({ number, title, description, index }: FlowCardProps) => {
       <h3 className="text-lg font-medium text-accentColor mt-4 tracking-wide text-center whitespace-pre-line">
         {title}
       </h3>
-      <p className="mt-2 whitespace-pre-line">{description}</p>
+      <p className="mt-2">{convertDescription(description)}</p>
     </div>
   );
 };

@@ -21,12 +21,24 @@ const AboutSection_01 = ({
   position,
   name,
 }: AboutSection_01Props) => {
-  // 文字列内の\nを<br />に変換する関数
+  // 文字列内の\nを<br />に変換する関数（title用）
   const convertNewLines = (text: string) => {
-    return text.split("\\n").map((line, i) => (
+    return text.split("\n").map((line, i) => (
       <React.Fragment key={i}>
-        {line}
-        {i !== text.split("\\n").length - 1 && <br />}
+        {line.trim()}
+        {i !== text.split("\n").length - 1 && <br />}
+      </React.Fragment>
+    ));
+  };
+
+  // 文字列内の\nを<br className="hidden md:block">に変換する関数（description用：SP時は非表示）
+  const convertDescription = (text: string) => {
+    return text.split("\n").map((line, i) => (
+      <React.Fragment key={i}>
+        {line.trim()}
+        {i !== text.split("\n").length - 1 && (
+          <br className="hidden md:block" />
+        )}
       </React.Fragment>
     ));
   };
@@ -47,8 +59,8 @@ const AboutSection_01 = ({
           <h3 className="w-full md:max-w-[500px] text-xl md:text-[22px] leading-[160%] tracking-[0.03em]">
             {convertNewLines(title)}
           </h3>
-          <p className="w-full md:max-w-[660px] leading-relaxed md:leading-[45px] text-base md:text-lg mt-10 md:mt-10 whitespace-pre-line tracking-[0.03em]">
-            {description}
+          <p className="w-full md:max-w-[660px] leading-relaxed md:leading-[45px] text-base md:text-lg mt-10 md:mt-10 tracking-[0.03em]">
+            {convertDescription(description)}
           </p>
           {(position || name) && (
             <p className="mt-10 text-base md:text-lg !leading-[250%] tracking-[0.03em]">
