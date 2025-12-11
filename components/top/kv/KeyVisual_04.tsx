@@ -18,7 +18,7 @@ const KeyVisual_04 = () => {
     <>
       <FirstViewContent className="relative">
         {/* widthがフルサイズでない場合は指定する */}
-        <section className="mx-auto relative h-screen flex items-center justify-center px-4 py-[50px] md:p-20">
+        <section className="mx-auto relative h-[500px] md:h-screen flex items-center justify-center px-4 py-[50px] md:p-20">
           {/* 1枚の画像のみ表示 */}
           <div className="relative w-full h-full max-w-[1680px] max-h-[90vh] rounded-[20px] md:rounded-[40px] overflow-hidden">
             <picture>
@@ -45,8 +45,8 @@ const KeyVisual_04 = () => {
               ヴァイオリン教室
             </>
           }
-          description="Fukuda Hiromi Violin Lesson"
-          className="w-full text-center absolute left-1/2  transform -translate-x-1/2 top-1/2 -translate-y-1/2 px-5"
+          description={<>Fukuda Hiromi <br className="md:hidden"/>Violin Lesson</>}
+          className="w-fit md:w-full text-left md:text-center absolute right-3 md:left-1/2  md:transform md:-translate-x-1/2 top-[80px] md:top-1/2 md:-translate-y-1/2 px-5"
         />
       </FirstViewContent>
     </>
