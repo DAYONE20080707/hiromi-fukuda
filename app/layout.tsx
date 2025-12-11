@@ -7,6 +7,7 @@ import {
   Shippori_Mincho,
   EB_Garamond,
 } from "next/font/google";
+import { GoogleTagManager } from '@/components/ui/module/GoogleTagManager'
 
 
 // Sorts Mill Goudy フォントの設定（英字用）
@@ -126,7 +127,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
       <body
         className={`text-baseColor ${zenKakuGothicNew.variable} ${sortsMillGoudy.variable} ${shipporiMincho.variable} ${ebGaramond.variable}`}
       >
-
+  <GoogleTagManager gtmId="GTM-NRBCWBBM" />
         <ToastProvider />
         {children}
       </body>
