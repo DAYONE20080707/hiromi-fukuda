@@ -50,7 +50,7 @@ const formFields: FormField[] = [
     name: "inquiryType",
     type: "select",
     options: [
-      { value: "", label: "選択してください" },
+      { value: "未選択", label: "選択してください" },
       { value: "trial", label: "体験レッスンについて" },
       { value: "lesson", label: "レッスン・料金について" },
       { value: "course", label: "コース・カリキュラムについて" },
