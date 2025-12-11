@@ -4,7 +4,7 @@ import React from "react"
 
 interface ProfileCard_02Props {
   label?: string
-  value: string
+  value: string | React.ReactNode
 }
 
 const ProfileCard_02 = ({ label, value }: ProfileCard_02Props) => {

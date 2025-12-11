@@ -26,12 +26,13 @@ const About_01 = () => {
                 // titleClassName="text-center"
               />
             </div>
-            <div className="w-full h-[400px] md:w-[520px] md:h-[666px] relative">
+            <div className="w-full h-full md:w-[520px] md:h-[666px] relative">
               <Image
                 src="/top/about/about_img.jpg"
                 alt="福田ひろみ"
-                fill
-                className="object-cover rounded-[40px]"
+                width={520}
+                height={666}
+                className="object-cover rounded-[20px] md:rounded-[40px] aspect-[520/666]"
               />
             </div>
             <div className="max-w-[540px] mt-10 md:mt-0">
@@ -56,14 +57,14 @@ const About_01 = () => {
                 </h3>
                 <p className="leading-[200%]">
                   母のすすめで鈴木メソードの教室に通い始めたのが､ヴァイオリンとの出会いでした。
-                  <br />
+                  <br className="hidden md:block"/>
                   お教室で年上のお兄さんがかっこよく楽しそうに弾く姿に憧れ､「自分もあんなふうに弾きたい」と思ったのを覚えています。
-                  <br />
+                  <br className="hidden md:block"/>
                   小学校2年生で初めてコンクールに挑戦し､負けず嫌いな性格から「1位になりたい」と思うようになりました。厳しくも支えてくれた母､そして週末の朝にモーツァルトのレコードが流れる──そんな〈暮らしの中のクラシック〉がある家で､自然と音楽が身近になっていきました。
                   <br />
                   <br />
                   今はその経験を生かして､「ヴァイオリンを通して音楽の楽しさを感じてほしい」という思いで指導にあたっています。
-                  <br />
+                  <br className="hidden md:block"/>
                   上手になる喜びだけでなく､音を通して自分を表現する楽しさを伝えられるよう､ひとりひとりに寄り添ったレッスンを大切にしています。
                 </p>
               </div>
@@ -71,9 +72,9 @@ const About_01 = () => {
                 <h3 className="text-xl text-accentColor">演奏依頼について</h3>
                 <p className="leading-[200%]">
                   各種コンサートやイベント、アウトリーチにおける演奏のご依頼承ります。
-                  <br />
+                  <br className="hidden md:block"/>
                   老人ホームや小学校、アマチュアアンサンブルとの共演などご依頼を受けた実績があり、大変ご好評をいただいております。アンサンブルの楽器編成などもご希望に応じることができます。
-                  <br />
+                  <br className="hidden md:block"/>
                   詳しくはお問い合わせフォームよりお気軽にご連絡ください。
                 </p>
               </div>

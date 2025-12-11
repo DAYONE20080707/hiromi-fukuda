@@ -84,7 +84,7 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
   if (!contents || contents.length === 0) return <h1>No contents</h1>
 
   return (
-    <SectionContent className="">
+    <SectionContent className="bg-bgLight">
       <section className="md:max-w-[1200px] mx-auto md:space-y-10">
         <ContentHeadline subTitle="生徒の声・ブログ" mainTitle="Review&Blog" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">

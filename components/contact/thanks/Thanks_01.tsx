@@ -33,11 +33,11 @@ const Thanks_01 = () => {
         </h2>
 
         {/* メッセージ */}
-        <p className="text-base md:text-xl text-baseColor leading-relaxed mb-10 md:mb-16 max-w-3xl mx-auto">
+        <p className="text-left md:text-center text-base md:text-xl text-baseColor leading-relaxed mb-10 md:mb-16 max-w-3xl mx-auto">
           お問い合わせいただき、誠にありがとうございます。
           <br className="hidden md:block" />
           お問い合わせ内容を確認後、3営業日以内に担当者からご連絡致しますので、
-          <br />
+          <br className="hidden md:block" />
           今しばらくお待ちくださいませ。
         </p>
 
