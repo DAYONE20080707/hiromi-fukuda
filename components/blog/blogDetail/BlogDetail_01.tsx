@@ -9,6 +9,7 @@ import { NavigationArrow } from "@/components/ui/icons/NavigationArrow"
 import { Cms } from "@/types"
 import { blogsFetch } from "@/lib/api/blogsFetch"
 import Breadcrumb from "@/components/ui/module/Breadcrumb"
+import styles from '@/styles/microcms.module.css'
 
 interface BlogDetailProps {
   params: {
@@ -170,7 +171,7 @@ const BlogDetail_01 = ({ params }: BlogDetailProps) => {
         )}
 
         <div
-          className="blog-content"
+          className={styles.content}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
