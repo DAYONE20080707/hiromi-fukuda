@@ -87,49 +87,53 @@ const Blog_01 = ({ limit = 3 }: BlogProps) => {
     <SectionContent className="bg-bgLight">
       <section className="md:max-w-[1200px] mx-auto md:space-y-10">
         <ContentHeadline subTitle="生徒の声・ブログ" mainTitle="Review&Blog" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-10">
           {contents.map((post) => (
-            <div key={post.id} className="w-full">
+            <ul key={post.id} className="w-full">
               <Link href={`/blog/${post.id}`} className="block group">
-                <div className="w-full h-[250px] mt-5 md:mt-0 rounded-t-2xl overflow-hidden">
-                  {post.image && (
-                    <Image
-                      src={post.image.url}
-                      alt={post.title ?? "ブログサムネイル"}
-                      width={370}
-                      height={223}
-                      className="w-full h-full rounded-[20px] object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  )}
-                </div>
-                <div className="mt-6">
-                  <p className="text-lg font-medium break-words min-h-12 leading-[160%] group-hover:text-accent transition-colors">
-                    {post.title}
-                  </p>
-                  {post.content && (
-                    <p className="mt-2 text-base line-clamp-2 leading-[160%] text-gray-700">
-                      {Array.from(stripHtmlTags(post.content))
-                        .slice(0, 100)
-                        .join("")}
-                      ...
-                    </p>
-                  )}
-
-                  {post.category && post.category.length > 0 && (
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {post.category.map((cat, index) => (
-                        <span key={index} className="text-xs text-gray-500">
-                          #{cat}
-                        </span>
-                      ))}
+                <li className="flex flex-row md:flex-col items-center rounded-2xl overflow-hidden">
+                  <figure className="w-1/2 md:w-full h-[120px] md:h-[223px]">
+                    {post.image && (
+                      <Image
+                        src={post.image.url}
+                        alt={post.title ?? "ブログサムネイル"}
+                        width={370}
+                        height={223}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    )}
+                  </figure>
+                  <div className="w-1/2 md:w-full p-4 flex flex-col justify-between">
+                    <div>
+                      <p className=" text-base md:text-lg font-medium break-words leading-[160%] group-hover:text-accent transition-colors">
+                        {post.title}
+                      </p>
+                      {post.content && (
+                        <p className="mt-2 text-sm md:text-base line-clamp-2 leading-[160%] text-gray-700">
+                          {Array.from(stripHtmlTags(post.content))
+                            .slice(0, 100)
+                            .join("")}
+                          ...
+                        </p>
+                      )}
                     </div>
-                  )}
-                </div>
+                    {post.category && post.category.length > 0 && (
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {post.category.map((cat, index) => (
+                          <span key={index} className="text-xs text-gray-500">
+                            #{cat}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </li>
               </Link>
-            </div>
+            </ul>
           ))}
         </div>
-        <div className="flex justify-center mt-16">
+
+        <div className="flex justify-center mt-8 md:mt-16 px-2">
           <MoreButton href="/blog" className="" variant="accent">
             View more
           </MoreButton>
